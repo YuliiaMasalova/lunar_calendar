@@ -3,7 +3,7 @@
 Lunar and astrological calendar. Daily Forecast and Monthly Calendar for any date and
 location, in Ukrainian, Russian and English.
 
-- **Storybook (Chromatic):** https://6ab63463ff05c3364eaf4654-bxumktlvxi.chromatic.com/
+- **Storybook (Chromatic, always the latest `main`):** https://main--6ab63463ff05c3364eaf4654.chromatic.com/
 - **Design (Figma):** https://www.figma.com/design/M1VsbaOwwPoa1l5fpOIJq4/lunar_calendar
 - **Specification:** [SPEC.md](SPEC.md)
 
