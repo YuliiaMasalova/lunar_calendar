@@ -19,7 +19,10 @@ export function DayHero({ astro, motto, eyebrow }: DayHeroProps) {
     : null;
 
   return (
-    <section className="relative px-16 py-40 text-center md:py-60">
+    // md:py-[110px]: the Figma hero leaves 476px between header and category chips, so the
+    // 457px background rings sit fully clear of both (about 9px each side) instead of
+    // sliding under the sticky header and over the chips.
+    <section className="relative px-16 py-40 text-center md:py-[110px]">
       <HeroBackground />
       <div className="relative z-10 flex flex-col items-center gap-16">
         <p className="text-label-sm uppercase tracking-[0.2em] text-status-favorable">
