@@ -3,9 +3,9 @@
 Lunar and astrological calendar. Daily Forecast and Monthly Calendar for any date and
 location, in Ukrainian, Russian and English.
 
-- **Live app (Cloudflare):** https://lunar-calendar.yuliiamas85.workers.dev/
+- **Live app (Cloudflare):** https://app.auralunar.workers.dev
 - **Storybook (Chromatic, always the latest `main`):** https://main--6ab63463ff05c3364eaf4654.chromatic.com/
-- **Design (Figma):** https://www.figma.com/design/M1VsbaOwwPoa1l5fpOIJq4/lunar_calendar
+- **Design (Figma):** [https://www.figma.com/design/M1VsbaOwwPoa1l5fpOIJq4/lunar_calendar](https://www.figma.com/design/M1VsbaOwwPoa1l5fpOIJq4/lunar_calendar?node-id=0-1&t=9tL3aCFmNoiQtvWw-1)
 - **Specification:** [SPEC.md](SPEC.md)
 
 ## How it works
