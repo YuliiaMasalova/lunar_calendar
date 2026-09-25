@@ -1,9 +1,11 @@
-// Typed views over the RU knowledge base (src/knowledge-base/*.json) — Layer B.
-import lunarDaysJson from '../../knowledge-base/lunar_days_complete.json';
-import moonTransitsJson from '../../knowledge-base/moon_transits.json';
-import planetaryAspectsJson from '../../knowledge-base/planetary_aspects.json';
-import retrogradePlanetsJson from '../../knowledge-base/retrograde_planets.json';
-import eclipsesJson from '../../knowledge-base/eclipses.json';
+// Typed views over the knowledge base (src/knowledge-base) — Layer B.
+//
+// Russian is the canonical, complete set and lives in the folder root. Ukrainian and
+// English live in `uk/` and `en/` with the SAME file names, schema and ids. A missing
+// file or record is not an error: KnowledgeService falls back to the Russian entry and
+// flags it (SPEC §7.5), so a language can be added or completed incrementally.
+
+export type KbLang = 'ru' | 'uk' | 'en';
 
 export interface LunarDayKB {
   id: number;
@@ -56,11 +58,60 @@ export interface EclipseKB {
   description: string;
 }
 
-export const lunarDaysKB = (lunarDaysJson as { lunar_days: LunarDayKB[] }).lunar_days;
-export const moonTransitsKB = (moonTransitsJson as { moon_transits: MoonTransitKB[] }).moon_transits;
-export const aspectCategoriesKB = (planetaryAspectsJson as { categories: AspectCategoryKB[] }).categories;
-export const retrogradeKB = (retrogradePlanetsJson as { retrograde_planets: RetroKB[] }).retrograde_planets;
-export const eclipsesKB = eclipsesJson as {
+export interface EclipseTablesKB {
   solar_eclipses: Record<string, EclipseKB>;
   lunar_eclipses: Record<string, EclipseKB>;
-};
+}
+
+export interface KnowledgeBase {
+  lunarDays: LunarDayKB[];
+  moonTransits: MoonTransitKB[];
+  aspectCategories: AspectCategoryKB[];
+  retrograde: RetroKB[];
+  eclipses: EclipseTablesKB;
+}
+
+// Every JSON under src/knowledge-base, keyed by its path relative to this file.
+const modules = import.meta.glob<unknown>('../../knowledge-base/**/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+function file<T>(lang: KbLang, name: string): T | undefined {
+  const dir = lang === 'ru' ? '' : `${lang}/`;
+  return modules[`../../knowledge-base/${dir}${name}.json`] as T | undefined;
+}
+
+function buildKb(lang: KbLang): KnowledgeBase {
+  return {
+    lunarDays:
+      file<{ lunar_days: LunarDayKB[] }>(lang, 'lunar_days_complete')?.lunar_days ?? [],
+    moonTransits:
+      file<{ moon_transits: MoonTransitKB[] }>(lang, 'moon_transits')?.moon_transits ?? [],
+    aspectCategories:
+      file<{ categories: AspectCategoryKB[] }>(lang, 'planetary_aspects')?.categories ?? [],
+    retrograde:
+      file<{ retrograde_planets: RetroKB[] }>(lang, 'retrograde_planets')?.retrograde_planets ??
+      [],
+    eclipses:
+      file<EclipseTablesKB>(lang, 'eclipses') ?? { solar_eclipses: {}, lunar_eclipses: {} },
+  };
+}
+
+const cache = new Map<KbLang, KnowledgeBase>();
+
+/** Normalise any language code to one the KB supports (anything unknown -> ru). */
+export function kbLang(lang: string): KbLang {
+  return lang === 'uk' || lang === 'en' ? lang : 'ru';
+}
+
+/** The knowledge base for a language (built once, then cached). */
+export function kbFor(lang: string): KnowledgeBase {
+  const l = kbLang(lang);
+  let kb = cache.get(l);
+  if (!kb) {
+    kb = buildKb(l);
+    cache.set(l, kb);
+  }
+  return kb;
+}

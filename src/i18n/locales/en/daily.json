@@ -42,5 +42,23 @@
     "moonriseSet": "Moonrise / Moonset:",
     "illumination": "Illumination:",
     "voidOfCourse": "Void of Course:"
+  },
+  "kb": {
+    "moonEntersSign": "Moon enters {{sign}}",
+    "talismans": "Symbol: {{symbol}}. Stones: {{stones}}",
+    "eclipse": {
+      "solar": "Solar",
+      "lunar": "Lunar",
+      "event": {
+        "solar": "Solar eclipse",
+        "lunar": "Lunar eclipse"
+      },
+      "kind": {
+        "total": "Total",
+        "partial": "Partial",
+        "annular": "Annular",
+        "penumbral": "Penumbral"
+      }
+    }
   }
 }

@@ -42,5 +42,23 @@
     "moonriseSet": "Восход / Заход Луны:",
     "illumination": "Освещённость:",
     "voidOfCourse": "Луна без курса:"
+  },
+  "kb": {
+    "moonEntersSign": "Луна переходит в знак {{sign}}",
+    "talismans": "Символ: {{symbol}}. Камни: {{stones}}",
+    "eclipse": {
+      "solar": "Солнечное",
+      "lunar": "Лунное",
+      "event": {
+        "solar": "Солнечное затмение",
+        "lunar": "Лунное затмение"
+      },
+      "kind": {
+        "total": "Полное",
+        "partial": "Частное",
+        "annular": "Кольцевое",
+        "penumbral": "Полутеневое"
+      }
+    }
   }
 }

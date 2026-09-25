@@ -14,8 +14,9 @@ location, in Ukrainian, Russian and English.
   lunar day (from New Moon and moonrise), Moon sign transits, phases, void of course,
   aspects, planetary retrogrades and eclipses. Times are in the user's timezone and
   location, and no dates are hardcoded, so it works for any year.
-- **Texts** are static Russian content in [`src/knowledge-base`](src/knowledge-base),
-  mapped onto the computed data by `KnowledgeService`.
+- **Texts** are static content in [`src/knowledge-base`](src/knowledge-base), fully translated
+  into Russian (canonical), Ukrainian (`uk/`) and English (`en/`), and mapped onto the computed
+  data by `KnowledgeService`. A missing record falls back to Russian and shows a note.
 - **Location** comes from the browser Geolocation API or a city search (Nominatim),
   defaulting to Kyiv.
 

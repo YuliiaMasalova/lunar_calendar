@@ -1,3 +1,4 @@
+import type { TFunction } from 'i18next';
 import type { AstroData, ComputedAspect, PlanetId, ZodiacSign } from '../../types/astro';
 import type { DayStatus } from '../../types/status';
 import type {
@@ -12,45 +13,93 @@ import {
 } from '../astro/AstroCalculator';
 import { deviceTimeZone, formatLocalDate } from '../../utils/timezone';
 import { localeOf } from '../../utils/format';
+import i18n from '../../i18n';
 import {
-  aspectCategoriesKB,
-  eclipsesKB,
-  lunarDaysKB,
-  moonTransitsKB,
-  retrogradeKB,
+  kbFor,
+  kbLang,
+  type AspectKB,
+  type KbLang,
+  type KnowledgeBase,
+  type LunarDayKB,
+  type MoonTransitKB,
+  type RetroKB,
 } from './rawKnowledge';
 
 /**
- * Layer B — maps computed astronomy (Layer A) onto the RU knowledge base.
- * The KB is RU-only; UI languages UK/EN fall back to RU with a banner (SPEC §7.5).
+ * Layer B — maps computed astronomy (Layer A) onto the knowledge base.
+ * Texts come from the KB of the active language (RU/UK/EN). When a record is missing
+ * in that language the Russian one is used and the result is flagged so the UI can show
+ * the "translation unavailable" note (SPEC §7.5). Fixed labels (phase names, sign
+ * names, "Moon enters …") come from i18n, never from hardcoded strings.
  */
 
 // --- lookups ---------------------------------------------------------------
 
-const lunarDayById = new Map(lunarDaysKB.map((d) => [d.id, d]));
-const transitById = new Map(moonTransitsKB.map((t) => [t.id, t]));
-const retroById = new Map(retrogradeKB.map((r) => [r.id, r]));
+interface Index {
+  day: Map<number, LunarDayKB>;
+  transit: Map<string, MoonTransitKB>;
+  retro: Map<string, RetroKB>;
+  aspect: Map<string, AspectKB>;
+}
 
+const indexCache = new Map<KbLang, Index>();
+
+function indexOf(lang: KbLang): Index {
+  let idx = indexCache.get(lang);
+  if (!idx) {
+    const kb: KnowledgeBase = kbFor(lang);
+    idx = {
+      day: new Map(kb.lunarDays.map((d) => [d.id, d])),
+      transit: new Map(kb.moonTransits.map((t) => [t.id, t])),
+      retro: new Map(kb.retrograde.map((r) => [r.id, r])),
+      aspect: new Map(kb.aspectCategories.flatMap((c) => c.aspects.map((a) => [a.id, a]))),
+    };
+    indexCache.set(lang, idx);
+  }
+  return idx;
+}
+
+/** Per-request context: language index, Russian fallback index, i18n and the fallback flag. */
+class Ctx {
+  /** True once any text had to be taken from the Russian KB for a non-RU language. */
+  fellBack = false;
+  readonly lang: KbLang;
+  readonly idx: Index;
+  readonly ru: Index;
+  readonly t: TFunction;
+  readonly kb: KnowledgeBase;
+  readonly kbRu: KnowledgeBase;
+
+  constructor(lang: string) {
+    this.lang = kbLang(lang);
+    this.idx = indexOf(this.lang);
+    this.ru = indexOf('ru');
+    this.t = i18n.getFixedT(this.lang);
+    this.kb = kbFor(this.lang);
+    this.kbRu = kbFor('ru');
+  }
+
+  /** The record in the active language, else the Russian one (flagging the fallback). */
+  pick<K, T>(primary: Map<K, T>, fallback: Map<K, T>, id: K): T | undefined {
+    const hit = primary.get(id);
+    if (hit) return hit;
+    const fb = fallback.get(id);
+    if (fb && this.lang !== 'ru') this.fellBack = true;
+    return fb;
+  }
+}
+
+// Day status is structural data (it colours the calendar cells), not display text, so it
+// is always read from the canonical Russian KB whatever the UI language is.
 const STATUS_MAP: Record<string, DayStatus> = {
   Благоприятный: 'favorable',
   Нейтральный: 'neutral',
   Критический: 'critical',
 };
 
-const PHASE_RU: Record<AstroData['moon_phase'], string> = {
-  new_moon: 'Новолуние',
-  waxing_crescent: 'Растущий серп',
-  first_quarter: 'Первая четверть',
-  waxing_gibbous: 'Растущая Луна',
-  full_moon: 'Полнолуние',
-  waning_gibbous: 'Убывающая Луна',
-  last_quarter: 'Последняя четверть',
-  waning_crescent: 'Убывающий серп',
-};
-
-/** RU day status for a lunar day (used by the astro engine for cell colour). */
+/** Day status for a lunar day (used by the astro engine for cell colour). */
 export function lunarDayStatus(lunarDay: number): DayStatus {
-  const kb = lunarDayById.get(clampDay(lunarDay));
+  const kb = indexOf('ru').day.get(clampDay(lunarDay));
   return (kb && STATUS_MAP[kb.status]) ?? 'neutral';
 }
 
@@ -58,18 +107,12 @@ function clampDay(n: number): number {
   return Math.min(30, Math.max(1, n));
 }
 
+/** Russian sign name — the key of the eclipse tables in every language. */
 function signRu(sign: ZodiacSign): string {
-  return transitById.get(sign)?.sign ?? sign;
+  return indexOf('ru').transit.get(sign)?.sign ?? sign;
 }
 
 // --- aspect mapping --------------------------------------------------------
-
-const availableAspectIds = new Set(
-  aspectCategoriesKB.flatMap((c) => c.aspects.map((a) => a.id)),
-);
-const aspectById = new Map(
-  aspectCategoriesKB.flatMap((c) => c.aspects.map((a) => [a.id, a])),
-);
 
 /** Geometry + planet → KB aspect category (harmony/tension/insight). */
 function aspectCategory(planet: PlanetId, geometry: ComputedAspect['geometry']): AspectType {
@@ -80,32 +123,38 @@ function aspectCategory(planet: PlanetId, geometry: ComputedAspect['geometry']):
   return 'insight';
 }
 
-function resolveAspect(planet: PlanetId, geometry: ComputedAspect['geometry']): PlanetaryAspect | null {
+function resolveAspect(
+  ctx: Ctx,
+  planet: PlanetId,
+  geometry: ComputedAspect['geometry'],
+): PlanetaryAspect | null {
   const category = aspectCategory(planet, geometry);
   const preferredId = `moon_${planet}_${category}`;
   // Only surface aspects that have an exact KB entry for that planet+category,
   // so we never mislabel (e.g. a Sun opposition as "harmony"). SPEC §3.
-  const kb = availableAspectIds.has(preferredId) ? aspectById.get(preferredId) : undefined;
+  if (!ctx.ru.aspect.has(preferredId)) return null;
+  const kb = ctx.pick(ctx.idx.aspect, ctx.ru.aspect, preferredId);
   if (!kb) return null;
   return { time: '', aspect: kb.title, type: category };
 }
 
-function buildAspects(astro: AstroData): PlanetaryAspect[] {
+function buildAspects(astro: AstroData, ctx: Ctx): PlanetaryAspect[] {
   const out: PlanetaryAspect[] = [];
 
   // Headline phase event (Full/New Moon).
   if (astro.moon_event) {
+    const full = astro.moon_event.kind === 'full_moon';
     out.push({
       time: astro.moon_event.time,
-      aspect: astro.moon_event.kind === 'full_moon' ? 'Полнолуние' : 'Новолуние',
-      type: astro.moon_event.kind === 'full_moon' ? 'tension' : 'insight',
+      aspect: ctx.t(full ? 'common:moonPhase.full_moon' : 'common:moonPhase.new_moon'),
+      type: full ? 'tension' : 'insight',
     });
   }
 
   // Computed Moon–planet aspects mapped to the KB.
   if (astro.aspects) {
     for (const a of astro.aspects) {
-      const resolved = resolveAspect(a.planet, a.geometry);
+      const resolved = resolveAspect(ctx, a.planet, a.geometry);
       if (resolved) out.push({ ...resolved, time: a.time });
     }
   }
@@ -114,7 +163,9 @@ function buildAspects(astro: AstroData): PlanetaryAspect[] {
   if (astro.zodiac_transition_sign && astro.zodiac_transition_time) {
     out.push({
       time: astro.zodiac_transition_time,
-      aspect: `Луна переходит в знак ${signRu(astro.zodiac_transition_sign)}`,
+      aspect: ctx.t('daily:kb.moonEntersSign', {
+        sign: ctx.t(`common:zodiac.${astro.zodiac_transition_sign}`),
+      }),
       type: 'transit',
     });
   }
@@ -131,13 +182,15 @@ function buildAspects(astro: AstroData): PlanetaryAspect[] {
 // --- day content -----------------------------------------------------------
 
 function buildDayContent(
+  ctx: Ctx,
   lunarDay: number,
   sign: ZodiacSign,
   phaseLabel: string,
   aspects: PlanetaryAspect[],
 ): DayContent {
-  const kb = lunarDayById.get(clampDay(lunarDay));
-  const transit = transitById.get(sign);
+  const dayId = clampDay(lunarDay);
+  const kb = ctx.pick(ctx.idx.day, ctx.ru.day, dayId);
+  const transit = ctx.pick(ctx.idx.transit, ctx.ru.transit, sign);
 
   if (!kb) {
     return {
@@ -168,7 +221,10 @@ function buildDayContent(
       beauty: kb.beauty_and_hair,
       business: kb.business_and_tasks,
       dreams: kb.dreams_and_intuition,
-      talismans: `Символ: ${kb.symbol}. Камни: ${kb.talismans_and_stones}`,
+      talismans: ctx.t('daily:kb.talismans', {
+        symbol: kb.symbol,
+        stones: kb.talismans_and_stones,
+      }),
     },
     planetary_aspects: aspects,
   };
@@ -176,27 +232,30 @@ function buildDayContent(
 
 export interface DayCardResult {
   blocks: { lunarDay: number; content: DayContent }[];
+  /** True only when some text had to fall back to the Russian KB (SPEC §7.5). */
   fallback: boolean;
 }
 
 /** Build the full day card (one content block per active lunar day). SPEC §7.1. */
 export function buildDayCard(astro: AstroData, lang: string): DayCardResult {
-  const phaseLabel = `${PHASE_RU[astro.moon_phase]} (${astro.illumination_percent}%)`;
-  const primaryAspects = buildAspects(astro);
+  const ctx = new Ctx(lang);
+  const phaseLabel = `${ctx.t(`common:moonPhase.${astro.moon_phase}`)} (${astro.illumination_percent}%)`;
+  const primaryAspects = buildAspects(astro, ctx);
   const days = astro.lunar_days.length ? astro.lunar_days : [astro.lunar_day_number];
 
   const blocks = days.map((lunarDay, i) => ({
     lunarDay,
-    content: buildDayContent(lunarDay, astro.zodiac_sign, phaseLabel, i === 0 ? primaryAspects : []),
+    content: buildDayContent(ctx, lunarDay, astro.zodiac_sign, phaseLabel, i === 0 ? primaryAspects : []),
   }));
 
-  return { blocks, fallback: lang !== 'ru' };
+  return { blocks, fallback: ctx.fellBack };
 }
 
 // --- year reference blocks -------------------------------------------------
 
 /** Retrograde planets active in `year`, mapped to KB interpretations. */
 export function getRetrogradesForYear(year: number, lang = 'ru'): RetrogradePlanet[] {
+  const ctx = new Ctx(lang);
   const tz = deviceTimeZone();
   const locale = localeOf(lang);
   const periods = computeRetrogradePeriods(year, tz);
@@ -205,13 +264,13 @@ export function getRetrogradesForYear(year: number, lang = 'ru'): RetrogradePlan
   for (const p of periods) {
     const entry = byPlanet.get(p.planet) ?? { ranges: [], signs: new Set<string>() };
     entry.ranges.push(`${formatLocalDate(p.startUtc, tz, locale)} — ${formatLocalDate(p.endUtc, tz, locale)}`);
-    for (const s of p.signs) entry.signs.add(signRu(s));
+    for (const s of p.signs) entry.signs.add(ctx.t(`common:zodiac.${s}`));
     byPlanet.set(p.planet, entry);
   }
 
   const result: RetrogradePlanet[] = [];
   for (const [planet, data] of byPlanet) {
-    const kb = retroById.get(planet);
+    const kb = ctx.pick(ctx.idx.retro, ctx.ru.retro, planet);
     if (!kb) continue;
     result.push({
       planet: kb.name,
@@ -225,38 +284,26 @@ export function getRetrogradesForYear(year: number, lang = 'ru'): RetrogradePlan
 
 /** Eclipses in `year`, mapped to KB descriptions by zodiac sign. */
 export function getEclipsesForYear(year: number, lang = 'ru'): EclipseEntry[] {
+  const ctx = new Ctx(lang);
   const tz = deviceTimeZone();
   const locale = localeOf(lang);
   const eclipses = computeYearEclipses(year, tz);
   const result: EclipseEntry[] = [];
 
   for (const e of eclipses) {
-    const ru = signRu(e.sign);
-    const table = e.kind === 'solar' ? eclipsesKB.solar_eclipses : eclipsesKB.lunar_eclipses;
-    const kb = table[ru];
-    const kindRu = e.kind === 'solar' ? 'Солнечное' : 'Лунное';
+    // The tables are keyed by the Russian sign name in every language.
+    const key = signRu(e.sign);
+    const table = e.kind === 'solar' ? 'solar_eclipses' : 'lunar_eclipses';
+    const kb = ctx.kb.eclipses[table][key] ?? ctx.kbRu.eclipses[table][key];
+    const kindLabel = ctx.t(`daily:kb.eclipse.${e.kind}`);
+    const subtype = ctx.t(`daily:kb.eclipse.kind.${e.eclipseKind}`, { defaultValue: e.eclipseKind });
     result.push({
-      event: kb ? kb.type : `${kindRu} затмение`,
+      event: kb ? kb.type : ctx.t(`daily:kb.eclipse.event.${e.kind}`),
       date: formatLocalDate(e.peakUtc, tz, locale),
-      type: `${kindRu} (${translateEclipseKind(e.eclipseKind)})`,
-      zodiac_position: ru,
+      type: `${kindLabel} (${subtype})`,
+      zodiac_position: ctx.t(`common:zodiac.${e.sign}`),
       description: kb?.description ?? '',
     });
   }
   return result;
-}
-
-function translateEclipseKind(kind: string): string {
-  switch (kind) {
-    case 'total':
-      return 'Полное';
-    case 'partial':
-      return 'Частное';
-    case 'annular':
-      return 'Кольцевое';
-    case 'penumbral':
-      return 'Полутеневое';
-    default:
-      return kind;
-  }
 }

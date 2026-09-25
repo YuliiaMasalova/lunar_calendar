@@ -42,5 +42,23 @@
     "moonriseSet": "Схід / Захід Місяця:",
     "illumination": "Освітленість:",
     "voidOfCourse": "Місяць без курсу:"
+  },
+  "kb": {
+    "moonEntersSign": "Місяць переходить у знак {{sign}}",
+    "talismans": "Символ: {{symbol}}. Камені: {{stones}}",
+    "eclipse": {
+      "solar": "Сонячне",
+      "lunar": "Місячне",
+      "event": {
+        "solar": "Сонячне затемнення",
+        "lunar": "Місячне затемнення"
+      },
+      "kind": {
+        "total": "Повне",
+        "partial": "Часткове",
+        "annular": "Кільцеве",
+        "penumbral": "Півтіньове"
+      }
+    }
   }
 }
