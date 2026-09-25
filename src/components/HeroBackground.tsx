@@ -25,19 +25,19 @@ export function HeroBackground() {
         fill="none"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* Outer ring — solid. */}
+        {/* Outer ring — solid. Figma Border 36:811 = 457.33px -> r 228.66 in the 580 frame. */}
         <circle
           cx="290"
           cy="290"
-          r="254"
+          r="228.66"
           className="stroke-border-primary"
           strokeWidth="1"
         />
-        {/* Inner ring — dashed, same colour as the outer ring. */}
+        {/* Inner ring — dashed, same colour. Figma Border 36:810 = 386.97px -> r 193.48. */}
         <circle
           cx="290"
           cy="290"
-          r="214"
+          r="193.48"
           className="stroke-border-primary"
           strokeWidth="1.5"
           strokeDasharray="5 9"
