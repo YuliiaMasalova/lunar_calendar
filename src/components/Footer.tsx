@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="mt-48 border-t border-border-secondary">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-16 py-24 text-caption-sm text-text-tertiary md:flex-row md:items-center md:justify-between md:px-24">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-16 py-24 text-caption-sm text-text-tertiary md:flex-row md:items-center md:justify-between md:px-32">
         <span>{t('footer.engine')}</span>
         <span>{t('footer.copyright', { coords, year: new Date().getFullYear() })}</span>
       </div>

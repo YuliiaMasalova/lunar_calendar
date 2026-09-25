@@ -18,7 +18,7 @@ export function AspectBadge({ type }: AspectBadgeProps) {
   const { t } = useTranslation();
   return (
     <span
-      className={`inline-flex items-center whitespace-nowrap rounded-md border px-12 py-4 text-label-sm ${VARIANT[type]}`}
+      className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-md border px-12 py-4 text-label-sm ${VARIANT[type]}`}
     >
       {t(`daily:badge.${type}`)}
     </span>

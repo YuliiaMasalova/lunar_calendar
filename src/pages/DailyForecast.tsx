@@ -43,7 +43,7 @@ export function DailyForecast() {
   const offline = typeof navigator !== 'undefined' && !navigator.onLine;
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-24 px-16 py-24 md:px-24">
+    <div className="mx-auto flex max-w-[1280px] flex-col gap-24 px-16 py-24 md:px-32">
       {offline && astroQuery.data && (
         <p className="rounded-lg border border-warning/40 bg-warning/10 px-16 py-8 text-caption-sm text-warning">
           {t('offline')}

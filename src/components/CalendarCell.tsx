@@ -87,7 +87,7 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
         <div
           role="gridcell"
           aria-disabled="true"
-          className="pointer-events-none flex aspect-square flex-col rounded-lg border border-border-secondary bg-bg-secondary/40 p-8 text-left opacity-40"
+          className="pointer-events-none flex h-[128px] flex-col rounded-lg border border-border-secondary bg-bg-secondary/40 px-12 pb-12 pt-8 text-left opacity-40"
         >
           <span className="text-cal-lunar-day text-text-disabled">{dayNumber}</span>
         </div>
@@ -106,31 +106,31 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
         onKeyDown={onKeyDown}
         aria-current={isToday ? 'date' : undefined}
         aria-selected={isSelected}
-        className={`flex aspect-square flex-col rounded-lg p-8 text-left transition-colors ${statusClasses(
+        // Figma "Calendar Day Cell" (146:86, 165.5×128): fixed 128px height, padding 12/8/12,
+        // radius 12; lunar day + zodiac icon on top, date number, time marker below.
+        className={`flex h-[128px] w-full flex-col justify-between rounded-lg px-12 pb-12 pt-8 text-left transition-colors ${statusClasses(
           status,
           isToday,
           isSelected,
         )}`}
       >
         <div className="flex items-start justify-between gap-4">
-          <span className="text-cal-lunar-day text-text-tertiary">
+          <span className="text-cal-lunar-day text-text-secondary">
             {astro ? lunarDayLabel(astro, t) : '—'}
           </span>
           {astro && (
-            <div className="flex shrink-0 items-center gap-4 text-text-secondary">
-              <ZodiacIcon sign={astro.zodiac_sign} size={14} decorative />
+            <div className="flex shrink-0 items-center text-text-heading-secondary">
+              <ZodiacIcon sign={astro.zodiac_sign} size={24} decorative />
               {astro.zodiac_transition_sign && (
-                <ZodiacIcon sign={astro.zodiac_transition_sign} size={14} decorative />
+                <ZodiacIcon sign={astro.zodiac_transition_sign} size={24} decorative />
               )}
             </div>
           )}
         </div>
 
-        <span className="mt-auto text-2xl font-semibold leading-none text-text-primary md:text-display-cal">
-          {dayNumber}
-        </span>
+        <span className="text-display-cal text-text-heading-secondary">{dayNumber}</span>
 
-        <span className="mt-4 truncate text-cal-lunar-time text-text-tertiary">
+        <span className="truncate text-cal-lunar-time text-text-disabled-strong">
           {astro ? timeMarkerLabel(astro, t) : ''}
         </span>
       </button>

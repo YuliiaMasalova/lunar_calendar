@@ -34,12 +34,14 @@ export function PlanetaryAspects({ aspects }: PlanetaryAspectsProps) {
           {aspects.map((aspect, i) => (
             <li
               key={i}
-              className="flex items-center gap-12 rounded-lg border border-border-secondary bg-overlay-dark px-16 py-16"
+              // flex-wrap: on a narrow column the badge drops to its own line instead of
+              // overflowing the card and causing horizontal scroll (SPEC §7.6).
+              className="flex flex-wrap items-center gap-x-12 gap-y-8 rounded-lg border border-border-secondary bg-overlay-dark px-16 py-16"
             >
               <time className="w-14 shrink-0 text-caption-sm text-text-meta" dateTime={aspect.time}>
                 {aspect.time}
               </time>
-              <span className="flex-1 text-label-md-regular text-text-secondary">
+              <span className="min-w-0 flex-1 basis-[120px] break-words text-label-md-regular text-text-secondary">
                 {aspect.aspect}
               </span>
               <AspectBadge type={aspect.type} />

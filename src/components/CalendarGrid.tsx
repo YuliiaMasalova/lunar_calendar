@@ -173,11 +173,11 @@ export function CalendarGrid({
         {isLoading ? (
           <div className="grid grid-cols-7 gap-8">
             {Array.from({ length: weeks.length * 7 }).map((_, i) => (
-              <Skeleton key={i} className="aspect-square rounded-lg" />
+              <Skeleton key={i} className="h-[128px] rounded-lg" />
             ))}
           </div>
         ) : (
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-12">
             {weeks.map((week, r) => {
               cellRefs.current[r] = cellRefs.current[r] ?? [];
               return (

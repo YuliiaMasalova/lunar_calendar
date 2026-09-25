@@ -50,7 +50,7 @@ export function MonthlyCalendar() {
     today.getFullYear() === y && today.getMonth() + 1 === m ? today : null;
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-24 px-16 py-24 md:px-24">
+    <div className="mx-auto flex max-w-[1280px] flex-col gap-24 px-16 py-24 md:px-32">
       <div className="flex flex-col gap-8">
         <p className="text-label-sm uppercase tracking-[0.2em] text-status-favorable">
           {t('calendar:eyebrow')}
