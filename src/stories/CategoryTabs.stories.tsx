@@ -60,3 +60,9 @@ export const DreamsActive: Story = {
 export const TalismansActive: Story = {
   render: () => <Stateful initial="talismans" />,
 };
+
+/** Mobile: chips become a full-width vertical stack (Figma 278:4539). */
+export const Mobile: Story = {
+  render: () => <Stateful initial="health_and_body" />,
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+};

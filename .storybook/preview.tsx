@@ -47,6 +47,27 @@ const preview: Preview = {
       },
     },
     a11y: { test: 'todo' },
+    // Responsive presets matching the Figma frames: iPhone 13/14 (390), tablet, desktop (1280).
+    // Pick one from the toolbar viewport menu, or a story selects it via `globals.viewport`.
+    viewport: {
+      options: {
+        mobile: {
+          name: 'Mobile · iPhone 13/14 (390)',
+          styles: { width: '390px', height: '844px' },
+          type: 'mobile',
+        },
+        tablet: {
+          name: 'Tablet (768)',
+          styles: { width: '768px', height: '1024px' },
+          type: 'tablet',
+        },
+        desktop: {
+          name: 'Desktop (1280)',
+          styles: { width: '1280px', height: '800px' },
+          type: 'desktop',
+        },
+      },
+    },
   },
   initialGlobals: {
     backgrounds: { value: 'primary' },

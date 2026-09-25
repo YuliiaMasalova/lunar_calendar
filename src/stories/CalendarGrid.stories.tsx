@@ -65,3 +65,15 @@ export const Loading: Story = {
 export const Error: Story = {
   args: { data: DATA, isLoading: false, isError: true },
 };
+
+/** Mobile: the 7-column grid is replaced by a vertical list of day rows (Figma 249:2481). */
+export const Mobile: Story = {
+  args: { data: DATA, isLoading: false, isError: false },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+};
+
+/** Mobile loading skeleton rows. */
+export const MobileLoading: Story = {
+  args: { data: new Map(), isLoading: true, isError: false },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+};

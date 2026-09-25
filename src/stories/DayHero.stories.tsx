@@ -28,3 +28,15 @@ export const DoubleDay: Story = {
 export const TripleDay: Story = {
   args: { astro: astroTriple, motto: content1.motto, eyebrow: '15 ОКТЯБРЯ 2027' },
 };
+
+/** Mobile hero (Figma 278:4539): lunar day 32px on one line, smaller orbit rings. */
+export const Mobile: Story = {
+  args: { astro: astro15, motto: content15.motto, eyebrow: EYEBROW },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+};
+
+/** Mobile hero with the longest label (triple lunar day) — must not overflow 390px. */
+export const MobileTripleDay: Story = {
+  args: { astro: astroTriple, motto: content1.motto, eyebrow: '15 ОКТЯБРЯ 2027' },
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+};

@@ -10,7 +10,11 @@ const noop = () => {};
 const DATE = new Date('2027-10-12T00:00:00');
 const STATUSES: DayStatus[] = ['favorable', 'neutral', 'critical'];
 
-/** Wrapper giving the aspect-square cell a real grid width. */
+/**
+ * Wrapper giving the cell its Figma width (Calendar Day Cell 146:86 = 166×128;
+ * the height is fixed at 128px by the component). Note: `w-96` would be 96px here —
+ * the spacing scale is px-based (tailwind.config.ts) — so use an explicit value.
+ */
 function Cell(props: {
   astro?: AstroData;
   inMonth?: boolean;
@@ -18,7 +22,7 @@ function Cell(props: {
   isSelected?: boolean;
 }) {
   return (
-    <div className="w-96">
+    <div className="w-[166px]">
       <CalendarCell
         date={DATE}
         astro={props.astro}
@@ -103,7 +107,7 @@ export const Matrix: Story = {
   parameters: { layout: 'padded' },
   render: () => (
     <div className="text-text-secondary">
-      <div className="grid grid-cols-[88px_96px_96px_96px_96px] items-center gap-8">
+      <div className="grid grid-cols-[88px_repeat(4,166px)] items-center gap-8">
         <div />
         {['Default', 'Selected', 'Today', 'Disabled'].map((h) => (
           <div key={h} className="text-center text-label-sm text-text-tertiary">
