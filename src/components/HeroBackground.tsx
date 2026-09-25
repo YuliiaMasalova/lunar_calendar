@@ -15,8 +15,11 @@ export function HeroBackground() {
       aria-hidden="true"
       className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[86vw] max-w-[300px] -translate-x-1/2 -translate-y-1/2 [mask-image:radial-gradient(circle,black_86%,transparent_100%)] md:max-w-[580px]"
     >
-      {/* Radial purple glow (Figma "Gradient", effect/glow/color-purple #a88bff26). */}
-      <div className="absolute inset-0 rounded-full bg-hero-glow" />
+      {/* Radial purple glow (Figma "Gradient", effect/glow/color-purple #a88bff26).
+          Its upper part reaches under the translucent sticky header, which cut it off with a
+          hard line. A vertical fade (transparent at the very top -> full by 35%) melts it into
+          the page background instead; the glow centre (40%) is unaffected. */}
+      <div className="absolute inset-0 rounded-full bg-hero-glow [mask-image:linear-gradient(to_bottom,transparent_0%,black_35%)]" />
 
       {/* Concentric orbital rings (Figma "Border" x2) — same colour, one solid, one dashed. */}
       <svg
