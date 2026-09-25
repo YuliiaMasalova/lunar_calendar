@@ -1,0 +1,88 @@
+{
+  "moon_transits": [
+    {
+      "id": "aries",
+      "sign": "Aries",
+      "symbol": "♈",
+      "motto": "Impulse, decisiveness and swift forward motion.",
+      "description": "The emotional climate turns dynamic, passionate and impatient. People tend to decide quickly and on impulse, and the risk of quarrels over trifles rises. This is an ideal time to launch short projects, get physically active and take bold steps, but a very poor time for painstaking routine work and diplomatic negotiations."
+    },
+    {
+      "id": "taurus",
+      "sign": "Taurus",
+      "symbol": "♉",
+      "motto": "Comfort, stability and material pragmatism.",
+      "description": "Emotions settle, giving way to level-headedness and a longing for coziness. The pull toward good food, beautiful things and sensual pleasures grows stronger. A wonderful period for financial investments, shopping, working with the land, settling property matters and steady, unhurried tasks."
+    },
+    {
+      "id": "gemini",
+      "sign": "Gemini",
+      "symbol": "♊",
+      "motto": "Lightness, sociability and a flow of information.",
+      "description": "Attention scatters, yet the speed of thought and the appetite for conversation rise sharply. These days suit short trips, negotiations, gathering information, studying, paperwork and meeting new people. Diving deep into a single task is hard, but casual connections come brilliantly."
+    },
+    {
+      "id": "cancer",
+      "sign": "Cancer",
+      "symbol": "♋",
+      "motto": "Sensitivity, intuition and a focus on home.",
+      "description": "Deep emotionality awakens, along with vulnerability and a need for emotional safety. Family, parents, children and the hearth take first place. Intuition sharpens. A favorable time for cozy evenings at home, cooking and time with loved ones, but any harsh word or criticism is felt very painfully."
+    },
+    {
+      "id": "leo",
+      "sign": "Leo",
+      "symbol": "♌",
+      "motto": "Radiance, creativity and a need for recognition.",
+      "description": "The sign’s energy brings optimism, generosity and a desire to shine and be at the center of attention. Creative potential intensifies. An excellent time for presentations, cultural events, celebrations, romantic dates and big purchases made for self-expression. A tendency toward showing off and drama comes to the surface."
+    },
+    {
+      "id": "virgo",
+      "sign": "Virgo",
+      "symbol": "♍",
+      "motto": "Order, analysis and practical care for your health.",
+      "description": "A mode of rationality, critical thinking and attention to detail switches on. Emotions recede into the background, making room for to-do lists and structure. An ideal time for a deep clean, submitting reports, putting your affairs in order and caring for your body (diets, preventive health care)."
+    },
+    {
+      "id": "libra",
+      "sign": "Libra",
+      "symbol": "♎",
+      "motto": "Diplomacy, partnership and aesthetic balance.",
+      "description": "The focus shifts to interaction with other people and the search for compromise and harmony. The sense of beauty sharpens, along with a pull toward art, elegance and fairness. A wonderful period for signing settlement agreements, working in pairs, social outings and legal consultations."
+    },
+    {
+      "id": "scorpio",
+      "sign": "Scorpio",
+      "symbol": "♏",
+      "motto": "Deep intuition, transformation and passion.",
+      "description": "The emotional climate turns intense, perceptive and uncompromising. Interest awakens in psychology, secrets, the esoteric and financial risk. These days suit research work and shedding outdated beliefs, but they are dangerous for having it out with someone, because of jealousy and hidden aggression."
+    },
+    {
+      "id": "sagittarius",
+      "sign": "Sagittarius",
+      "symbol": "♐",
+      "motto": "Widening horizons, optimism and a search for meaning.",
+      "description": "Interest grows in everything on a grand scale: travel, philosophy, foreign cultures, law and higher education. Faith in success appears, along with a generous spirit. A good time to launch large-scale projects, speak in public, look for mentors and plan long-distance trips."
+    },
+    {
+      "id": "capricorn",
+      "sign": "Capricorn",
+      "symbol": "♑",
+      "motto": "Discipline, ambition and a structured approach.",
+      "description": "The mood becomes more reserved, pragmatic and serious. People value hierarchy, clear rules and results. An excellent time for career moves, real estate matters, long-term planning and taking on the heavy duties that were previously put off."
+    },
+    {
+      "id": "aquarius",
+      "sign": "Aquarius",
+      "symbol": "♒",
+      "motto": "Freedom, innovation, friendship and flashes of insight.",
+      "description": "The pull toward independence and toward all that is new, unusual and technological grows stronger. Logic gives way to intuitive flashes of insight. A wonderful period for like-minded people, the IT field, brainstorming, scientific inquiry and informal conversation, but routine is especially hard to bear on these days."
+    },
+    {
+      "id": "pisces",
+      "sign": "Pisces",
+      "symbol": "♓",
+      "motto": "Empathy, spirituality and subtle intuition.",
+      "description": "The boundaries of reality blur, and impressionability, compassion and a poetic view of the world deepen. Creative and mystical potential rises. An ideal time for meditation, music, charity, working with imagery and rest by the water, but beware of absent-mindedness and illusions."
+    }
+  ]
+}

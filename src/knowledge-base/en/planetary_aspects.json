@@ -1,0 +1,103 @@
+{
+  "categories": [
+    {
+      "id": "harmony",
+      "name": "Harmony",
+      "ui_color": "green",
+      "aspects": [
+        {
+          "id": "moon_jupiter_harmony",
+          "title": "Moon — Jupiter (120° / 60°)",
+          "ui_badge": "120° HARMONY",
+          "description": "A surge of optimism, generosity and inner calm. Luck favors large-scale undertakings, legal matters, travel and conversation."
+        },
+        {
+          "id": "moon_venus_harmony",
+          "title": "Moon — Venus (120° / 60°)",
+          "ui_badge": "120° HARMONY",
+          "description": "Harmony of feeling, heightened charm and a pull toward beauty. An excellent time for romance, creativity, pleasant purchases and rest."
+        },
+        {
+          "id": "moon_mercury_harmony",
+          "title": "Moon — Mercury (120° / 60°)",
+          "ui_badge": "120° HARMONY",
+          "description": "Excellent understanding between emotion and logic. Thoughts flow easily, and any negotiation, study or work with information goes well."
+        },
+        {
+          "id": "moon_sun_harmony",
+          "title": "Moon — Sun (120° / 60°)",
+          "ui_badge": "120° HARMONY",
+          "description": "Inner agreement with yourself, a surge of strength and harmony in relationships with the opposite sex and with authority figures."
+        },
+        {
+          "id": "moon_saturn_harmony",
+          "title": "Moon — Saturn (120° / 60°)",
+          "ui_badge": "120° HARMONY",
+          "description": "Emotional composure, reliability and practicality. A good time for putting things in order, handling real estate matters and fulfilling obligations."
+        }
+      ]
+    },
+    {
+      "id": "tension",
+      "name": "Tension",
+      "ui_color": "red-burgundy",
+      "aspects": [
+        {
+          "id": "moon_saturn_tension",
+          "title": "Moon — Saturn (90° / 180°)",
+          "ui_badge": "90° TENSION",
+          "description": "A sense of loneliness, an emotional slump, melancholy and bureaucratic obstacles. Patience, discipline and letting go of haste are needed."
+        },
+        {
+          "id": "moon_mars_tension",
+          "title": "Moon — Mars (90° / 180° / 0° Conjunction)",
+          "ui_badge": "90° TENSION",
+          "description": "A short temper, irritability and a sharp surge of impulsive energy. The risk of conflicts or injuries rises. It is best to channel the energy into sports."
+        },
+        {
+          "id": "moon_pluto_tension",
+          "title": "Moon — Pluto (90° / 180°)",
+          "ui_badge": "90° TENSION",
+          "description": "Inner tension, a tendency toward drama, jealousy and attempts to control everything around you. Avoid confrontational situations."
+        },
+        {
+          "id": "moon_venus_tension",
+          "title": "Moon — Venus (90° / 180°)",
+          "ui_badge": "90° TENSION",
+          "description": "Emotional moodiness, touchiness and a tendency to overindulge (especially in food and spending). It is best not to settle financial matters now."
+        },
+        {
+          "id": "moon_mercury_tension",
+          "title": "Moon — Mercury (90° / 180°)",
+          "ui_badge": "90° TENSION",
+          "description": "Mental bustle, with emotions winning out over reason. Misunderstandings in conversation and mistakes in paperwork are possible."
+        }
+      ]
+    },
+    {
+      "id": "insight",
+      "name": "Insight",
+      "ui_color": "purple-blue",
+      "aspects": [
+        {
+          "id": "moon_uranus_insight",
+          "title": "Moon — Uranus (60° / 120° / Conjunction)",
+          "ui_badge": "60° INSIGHT",
+          "description": "Sudden flashes of insight, a longing for freedom and unconventional solutions. A wonderful period for brainstorming, working with IT and pleasant surprises."
+        },
+        {
+          "id": "moon_neptune_insight",
+          "title": "Moon — Neptune (60° / 120°)",
+          "ui_badge": "60° INSIGHT",
+          "description": "Sharpened intuition, deep empathy and immersion in creativity, music and meditative practice. A gentle dissolving of the boundaries of reality."
+        },
+        {
+          "id": "moon_pluto_insight",
+          "title": "Moon — Pluto (60° / 120°)",
+          "ui_badge": "60° INSIGHT",
+          "description": "A powerful psychological transformation, the ability to see the essence of hidden processes and to free yourself from inner fears."
+        }
+      ]
+    }
+  ]
+}

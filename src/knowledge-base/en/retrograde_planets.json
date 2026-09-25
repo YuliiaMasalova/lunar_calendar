@@ -1,0 +1,52 @@
+{
+  "retrograde_planets": [
+    {
+      "id": "mercury",
+      "name": "Mercury Retrograde",
+      "influence": "Communication, logistics, documents, technology.",
+      "meaning": "A time of delays, technical glitches and revisited agreements. Ideal for correcting mistakes, tidying up archives and returning to unfinished old business. Unfavorable for signing contracts and buying gadgets."
+    },
+    {
+      "id": "venus",
+      "name": "Venus Retrograde",
+      "influence": "Relationships, finances, aesthetics, values.",
+      "meaning": "A period of reassessing personal bonds and financial strategies. People from the past may return. It is not advisable to marry, change your look radically or make large investments."
+    },
+    {
+      "id": "mars",
+      "name": "Mars Retrograde",
+      "influence": "Drive, business launches, energy, sports.",
+      "meaning": "Outer momentum drops, and projects feel stuck in place. Do not start an aggressive competitive fight or a risky new venture; it is better to focus on auditing your current strategy."
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter Retrograde",
+      "influence": "Worldview, legal matters, expansion.",
+      "meaning": "A rethinking of life values and a search for inner authorities in place of outer ones. A good time for deep study and for revising your plans for the future."
+    },
+    {
+      "id": "saturn",
+      "name": "Saturn Retrograde",
+      "influence": "Discipline, career, structure, boundaries.",
+      "meaning": "A test of the strength of your life foundations. A time to return to old professional commitments, correct systemic errors and strengthen your personal boundaries."
+    },
+    {
+      "id": "uranus",
+      "name": "Uranus Retrograde",
+      "influence": "Innovation, freedom, change.",
+      "meaning": "An inner transformation of your attitude toward personal freedom and technology. A time to rethink rebellious ideas and to integrate what is new without chaos."
+    },
+    {
+      "id": "neptune",
+      "name": "Neptune Retrograde",
+      "influence": "Illusions, spirituality, creativity.",
+      "meaning": "Old illusions dissolve and the “rose-colored glasses” come off. A period of healing from creative crises and of reassessing spiritual bearings."
+    },
+    {
+      "id": "pluto",
+      "name": "Pluto Retrograde",
+      "influence": "Depth psychology, transformation, power.",
+      "meaning": "Work with subconscious fears, psychological blocks and inner crises. A time of release from outworn beliefs."
+    }
+  ]
+}

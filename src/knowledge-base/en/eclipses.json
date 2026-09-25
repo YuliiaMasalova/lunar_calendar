@@ -1,0 +1,126 @@
+{
+  "solar_eclipses": {
+    "Овен": {
+      "type": "Solar eclipse",
+      "short": "a powerful start, leadership, bold decisions",
+      "description": "An energetic reset point in Aries gives a strong push for personal beginnings, displays of courage and the launch of new projects. A time to take the initiative into your own hands."
+    },
+    "Телец": {
+      "type": "Solar eclipse",
+      "short": "financial shifts, your material foundation",
+      "description": "An eclipse in Taurus highlights themes of resources, money, comfort and stability. Long-term financial cycles are set in motion and material values are reassessed."
+    },
+    "Близнецы": {
+      "type": "Solar eclipse",
+      "short": "an information breakthrough, new acquaintances",
+      "description": "The focus falls on communication, learning, travel and connections. An excellent moment to change how you think, launch a media project or pick up important skills."
+    },
+    "Рак": {
+      "type": "Solar eclipse",
+      "short": "new intentions, a focus on home and family",
+      "description": "The eclipse brings up themes of ancestry, property, emotional security and the creation of family traditions. A time to lay the foundation for inner comfort."
+    },
+    "Лев": {
+      "type": "Solar eclipse",
+      "short": "an impulse toward change, creative energy",
+      "description": "It awakens a powerful creative potential and a thirst for self-expression, romance and recognition. A time to declare yourself and your talents to the world."
+    },
+    "Дева": {
+      "type": "Solar eclipse",
+      "short": "new work cycles, order and health",
+      "description": "A time to reboot routine processes and work systems, care for your body and introduce healthy habits. An excellent start for business processes."
+    },
+    "Весы": {
+      "type": "Solar eclipse",
+      "short": "a reset for relationships and partnerships",
+      "description": "It activates themes of unions, personal and business contracts, and the search for balance and harmony in dealings with other people."
+    },
+    "Скорпион": {
+      "type": "Solar eclipse",
+      "short": "deep transformation, financial risks",
+      "description": "An intense point of rebirth. The eclipse uncovers hidden processes and crisis points, and helps transform old patterns."
+    },
+    "Стрелец": {
+      "type": "Solar eclipse",
+      "short": "widening horizons, new goals",
+      "description": "It sets the direction for study, travel, legal matters and a shift in worldview. A time of large-scale plans and a search for new meaning."
+    },
+    "Козерог": {
+      "type": "Solar eclipse",
+      "short": "a career leap, structure and goals",
+      "description": "The focus falls on professional achievement, status, long-term strategy and taking on new responsibility."
+    },
+    "Водолей": {
+      "type": "Solar eclipse",
+      "short": "innovation, freedom, new technology",
+      "description": "A time of breakthrough ideas, digital projects, joining forces with like-minded people and stepping beyond familiar limits."
+    },
+    "Рыбы": {
+      "type": "Solar eclipse",
+      "short": "new intentions, a powerful start to a cycle",
+      "description": "It opens a deep spiritual cycle. A time of strong inner insight, retuning the subconscious and trusting your intuition."
+    }
+  },
+  "lunar_eclipses": {
+    "Овен": {
+      "type": "Lunar eclipse",
+      "short": "conflicts peak, an emotional release",
+      "description": "The peak of tension in the sphere of personal initiative and struggle. A time to finally end drawn-out disputes and release built-up aggression."
+    },
+    "Телец": {
+      "type": "Lunar eclipse",
+      "short": "financial results, release from attachments",
+      "description": "A culmination in the material sphere. A time to close out debts, review sources of income and let go of excessive hoarding."
+    },
+    "Близнецы": {
+      "type": "Lunar eclipse",
+      "short": "clarity in information, contacts come to an end",
+      "description": "Tangled situations in communication, paperwork or travel become clear. What was hidden comes to light, and unneeded connections are cut away."
+    },
+    "Рак": {
+      "type": "Lunar eclipse",
+      "short": "emotional release, questions of home",
+      "description": "A culmination of themes tied to family and place of residence. A time to let go of old grievances from the past and find emotional independence."
+    },
+    "Лев": {
+      "type": "Lunar eclipse",
+      "short": "a creative outcome, a peak in love",
+      "description": "The completion of projects tied to creativity, the stage or children. A time to see the real fruits of your efforts and of recognition."
+    },
+    "Дева": {
+      "type": "Lunar eclipse",
+      "short": "completion, releasing old chaos",
+      "description": "It draws a line under matters of order, work and health. An ideal moment to bring crystal clarity and clear out the clutter of routine."
+    },
+    "Весы": {
+      "type": "Lunar eclipse",
+      "short": "a resolution in relationships, partnership outcomes",
+      "description": "A culmination in the sphere of unions. Relationships that have run their course come to a final end, while harmonious ones reach a new level."
+    },
+    "Скорпион": {
+      "type": "Lunar eclipse",
+      "short": "deep cleansing, freedom from fears",
+      "description": "The most powerful emotional peak. A time to free yourself from psychological blocks, heavy memories and toxic attachments."
+    },
+    "Стрелец": {
+      "type": "Lunar eclipse",
+      "short": "the results of study, a change of beliefs",
+      "description": "The completion of educational cycles, legal proceedings or far-reaching projects. A review of the old system of values."
+    },
+    "Козерог": {
+      "type": "Lunar eclipse",
+      "short": "a professional outcome, shedding responsibility",
+      "description": "A culmination in your career. A time to take stock of years of work and give up outlived goals and rigid frameworks."
+    },
+    "Водолей": {
+      "type": "Lunar eclipse",
+      "short": "freedom from illusions in groups",
+      "description": "The outcome of taking part in group projects, a sharp change in your outlook on the future and the severing of outdated friendships or social ties."
+    },
+    "Рыбы": {
+      "type": "Lunar eclipse",
+      "short": "deep emotional transformations",
+      "description": "A culmination of hidden processes, the dissolving of old illusions, a powerful spiritual cleansing and the closing of karmic debts."
+    }
+  }
+}

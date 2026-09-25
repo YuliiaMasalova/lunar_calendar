@@ -1,0 +1,485 @@
+{
+  "lunar_days": [
+    {
+      "id": 1,
+      "title": "1st lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "Energy is at zero as the body reboots.",
+        "resonance": "Cleansing and mental hygiene.",
+        "recommended": "Meditation, quiet walks in the fresh air, planning your schedule for the month, light plant-based food.",
+        "caution": "Any physical overexertion, alcohol, hot baths. The head and face are especially vulnerable today."
+      },
+      "beauty_and_hair": "A haircut is strictly contraindicated. It is believed to “cut off” the plans set in motion for the month and to shorten life. A fine time for a gentle peel and moisturizing masks.",
+      "business_and_tasks": "Do not start anything new. This day is purely for analysis, planning and building strategy. Signing contracts and important meetings are best postponed.",
+      "dreams_and_intuition": "Dreams reveal your true desires for the month ahead. They rarely come true literally, but they set the right emotional direction.",
+      "talismans_and_stones": "Rock crystal, diamond, lapis lazuli.",
+      "symbol": "Lamp"
+    },
+    {
+      "id": 2,
+      "title": "2nd lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Active accumulation of energy, increased appetite.",
+        "resonance": "Physical nourishment and the start of training.",
+        "recommended": "Starting new exercise cycles, drawing up a diet, going to the gym.",
+        "caution": "Greed and anger lead to energy depletion. The teeth and mouth are vulnerable."
+      },
+      "beauty_and_hair": "A favorable day for a haircut: hair will grow faster and its structure will improve. A good time for nourishing and vitamin wraps.",
+      "business_and_tasks": "An excellent moment to look for sources of funding, to be generous, and to begin carrying out the plans you thought through on the 1st lunar day.",
+      "dreams_and_intuition": "Dreams serve as a direct pointer to karmic tasks. If you dreamed of an obstacle, it means you are heading the wrong way in real life.",
+      "talismans_and_stones": "Jadeite, chalcedony.",
+      "symbol": "Horn of plenty"
+    },
+    {
+      "id": 3,
+      "title": "3rd lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "A sharp surge of energy, a tendency toward aggression.",
+        "resonance": "Intensive work with the muscular frame.",
+        "recommended": "Maximum physical exertion, martial arts, a visit to the sauna or bathhouse to release tension.",
+        "caution": "Passivity is absolutely contraindicated, as stagnant energy provokes illness. The back of the head and the ears are vulnerable."
+      },
+      "beauty_and_hair": "Steer clear of salons. A haircut may bring unexpected expenses and worsen your well-being.",
+      "business_and_tasks": "A period of active, forceful action. An excellent time for competition, defending your interests and pushing stalled projects through.",
+      "dreams_and_intuition": "Dreams test your readiness for the fight. If you retreated or lost in the dream, you urgently need to train your willpower in real life.",
+      "talismans_and_stones": "Ruby, aventurine.",
+      "symbol": "Leopard"
+    },
+    {
+      "id": 4,
+      "title": "4th lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "The focus shifts to the inner world, the voice and the breath.",
+        "resonance": "Working with the vocal cords and the cervical spine.",
+        "recommended": "Singing, breathing practices, walks in nature, working with sound.",
+        "caution": "A higher risk of a flare-up of cervical osteochondrosis. Do not strain the vocal cords or let the throat get chilled."
+      },
+      "beauty_and_hair": "A neutral time for a haircut, though it may provoke a slight melancholy. The day is ideal for aromatherapy and neck care.",
+      "business_and_tasks": "Work with information, databases, archives and the family business will go well. Avoid hasty decisions: this is a day of choosing between good and evil.",
+      "dreams_and_intuition": "Dreams may expose hidden dangers or show the true face of the people around you.",
+      "talismans_and_stones": "Sardonyx, amazonite.",
+      "symbol": "Tree of Knowledge"
+    },
+    {
+      "id": 5,
+      "title": "5th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Peak absorption of nutrients and transformation of energy.",
+        "resonance": "Active work of the digestive tract.",
+        "recommended": "Full, hearty meals. Today food burns without residue and turns into pure energy.",
+        "caution": "Fasting is strictly forbidden. The stomach and esophagus are vulnerable. Avoid heavy synthetic food."
+      },
+      "beauty_and_hair": "A haircut today attracts financial prosperity. The skin responds well to rejuvenating treatments and injections.",
+      "business_and_tasks": "A day of transformation. Do not be afraid to change your plans radically if your intuition points to a new path. A good time to stand up for your principles.",
+      "dreams_and_intuition": "Dreams are often about roads, journeys or labyrinths. It is a good sign if you weep in your dream, as it symbolizes cleansing.",
+      "talismans_and_stones": "Turquoise, rose chalcedony.",
+      "symbol": "Unicorn"
+    },
+    {
+      "id": 6,
+      "title": "6th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Harmonization of the inner currents, serenity.",
+        "resonance": "The respiratory system, bronchi, upper respiratory tract.",
+        "recommended": "Pranayama (breathing practices), aromatherapy, massage, quiet rest and sound therapy.",
+        "caution": "Cold drinks and standing in drafts. The bronchi are vulnerable, so the risk of colds is high."
+      },
+      "beauty_and_hair": "A haircut is not recommended, as it may attract a cold or weaken the sense of smell. An excellent day for rejuvenating treatments.",
+      "business_and_tasks": "A passive, contemplative day. Routine tasks, scientific work, searching for information and working with documents go well.",
+      "dreams_and_intuition": "Dreams are often prophetic but call for subtle intuitive interpretation. Treat the symbols in a dream as metaphors.",
+      "talismans_and_stones": "Citrine, turquoise.",
+      "symbol": "Crane, Clouds"
+    },
+    {
+      "id": 7,
+      "title": "7th lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "Activation of the speech centers, a powerful energy of words.",
+        "resonance": "The lungs, the vocal cords.",
+        "recommended": "Reciting mantras, singing, healing through words and affirmations.",
+        "caution": "Lying, foul language, tooth extraction. Everything said aloud today comes true quickly."
+      },
+      "beauty_and_hair": "A haircut today will sharpen intuition and sensuality. A favorable time for coloring the hair.",
+      "business_and_tasks": "The ideal time for advertising campaigns, public speaking, negotiations and job interviews. The power of persuasion is at its peak.",
+      "dreams_and_intuition": "They may carry useful information. Take words heard in a dream literally, since the answer to your questions lies in them.",
+      "talismans_and_stones": "Sapphire, coral, rock crystal.",
+      "symbol": "Staff, Wind rose"
+    },
+    {
+      "id": 8,
+      "title": "8th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Inner alchemy, energetic restructuring at the cellular level.",
+        "resonance": "The stomach, the peripheral nervous system.",
+        "recommended": "Cleansing the digestive tract, preparing medicinal remedies, gentle fasting.",
+        "caution": "Overeating, aggression, working with open flame, drinking alcohol."
+      },
+      "beauty_and_hair": "A haircut will attract longevity and health. The day is ideal for complex cosmetic procedures.",
+      "business_and_tasks": "A successful start for any new venture, as well as moves and business trips. A day for transforming your business and finding new partners.",
+      "dreams_and_intuition": "Dreams point to your unresolved karmic tasks and your true purpose in life.",
+      "talismans_and_stones": "Red granite, chrysolite.",
+      "symbol": "Phoenix, Flame"
+    },
+    {
+      "id": 9,
+      "title": "9th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "An energy slump, susceptibility to illusions, anxiety.",
+        "resonance": "The chest, the intercostal muscles.",
+        "recommended": "Clearing your space, forgiving grievances, strength training to release accumulated negativity.",
+        "caution": "Getting drawn into conflicts, eating mushrooms, gazing into the mirror for long."
+      },
+      "beauty_and_hair": "A haircut is strictly contraindicated, as it can attract illness. It is better to postpone a visit to the cosmetologist.",
+      "business_and_tasks": "There is a danger of deception, fraud and collapsed deals. Stick strictly to safe, everyday routine.",
+      "dreams_and_intuition": "Nightmares tonight are normal. They show your suppressed fears, which you need to let go of.",
+      "talismans_and_stones": "Smoky quartz, black pearl, serpentine.",
+      "symbol": "Bat"
+    },
+    {
+      "id": 10,
+      "title": "10th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "The opening of the energy channels, a powerful connection with the ancestral line.",
+        "resonance": "The rib cage, the bones, the prostate.",
+        "recommended": "Family feasts, a visit to the bathhouse, laying the foundation for new undertakings and for building a home.",
+        "caution": "Loneliness, quarrels with relatives, breaking family bonds."
+      },
+      "beauty_and_hair": "A haircut today is categorically not recommended. Only light nourishing masks are favorable.",
+      "business_and_tasks": "An excellent day for teamwork, growing a family business, investments and closing major deals.",
+      "dreams_and_intuition": "You often dream of ancestors and relatives. Powerful guidance and protection from your lineage may come through dreams.",
+      "talismans_and_stones": "Amber, sardonyx, olivine.",
+      "symbol": "Fountain, Hidden spring"
+    },
+    {
+      "id": 11,
+      "title": "11th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "A tremendous surge of uncontrolled energy (Kundalini energy).",
+        "resonance": "The spine, the back.",
+        "recommended": "Finishing what you have started, careful stretching workouts, solitude.",
+        "caution": "Passivity is dangerous, but overexertion is harmful too. Avoid using sharp and cutting objects and undergoing surgery."
+      },
+      "beauty_and_hair": "A haircut will heighten your senses and insight. A good day for caring for the ends of the hair.",
+      "business_and_tasks": "Every action must be brought to its logical end. Abandoning things halfway is not allowed today.",
+      "dreams_and_intuition": "Dreams tonight carry little significance, so there is no need to look for deep meaning in them.",
+      "talismans_and_stones": "Fire opal, hematite.",
+      "symbol": "Fiery Sword, Crown"
+    },
+    {
+      "id": 12,
+      "title": "12th lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "The opening of the heart chakra, serenity, emotional receptivity.",
+        "resonance": "The heart, the cardiovascular system.",
+        "recommended": "Showing mercy, charity, giving gifts, water treatments.",
+        "caution": "Strain on the heart, quarrels, complaining about fate (you may get stuck in that state for a long time)."
+      },
+      "beauty_and_hair": "A haircut is not recommended, as it raises the risk of injury and of attracting misfortune.",
+      "business_and_tasks": "A good day to ask for sponsorship, make peace agreements and seek compromises with competitors.",
+      "dreams_and_intuition": "Dreams usually come true and bring bright, prophetic images.",
+      "talismans_and_stones": "Lapis lazuli, yellow coral, mother-of-pearl.",
+      "symbol": "Chalice, Heart"
+    },
+    {
+      "id": 13,
+      "title": "13th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Rejuvenation of the body, renewal of energy, cyclicality.",
+        "resonance": "The circulatory system, the skin.",
+        "recommended": "Treatment, massage, a visit to the dentist, study, correcting the mistakes of the past.",
+        "caution": "Dwelling on old grievances and refusing to take in new information."
+      },
+      "beauty_and_hair": "An ideal day for a haircut: hair will grow thicker and fresh energy will come into your life. The best time for cosmetology.",
+      "business_and_tasks": "Teamwork, information exchange and brainstorming go well. It is favorable to return to old projects.",
+      "dreams_and_intuition": "Dreams show the way to solve old problems. Long-ago dreams often recur tonight.",
+      "talismans_and_stones": "Red opal, ruby.",
+      "symbol": "Wheel, Spinning wheel"
+    },
+    {
+      "id": 14,
+      "title": "14th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Maximum physical and mental activity ahead of the Full Moon.",
+        "resonance": "The eyes, the intestines.",
+        "recommended": "Beginning the most important and large-scale projects, dry fasting, cleansing the body.",
+        "caution": "Sadness, laziness, apathy, excessive fluid intake, straining the eyes."
+      },
+      "beauty_and_hair": "A haircut may weigh on your peace of mind, so it is better to cancel the visit to the hairdresser.",
+      "business_and_tasks": "One of the best days of the month for launching a business, investing and taking decisive steps. Taking a risk is justified today.",
+      "dreams_and_intuition": "Dreams carry no important information and are often heavy because of the approaching Full Moon.",
+      "talismans_and_stones": "Hyacinth, sapphire.",
+      "symbol": "Trumpet"
+    },
+    {
+      "id": 15,
+      "title": "15th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "Peak sensitivity of the nervous system. A day of temptations and overload.",
+        "resonance": "The pancreas, the diaphragm.",
+        "recommended": "Cultivating peacefulness and patience, strict self-control. A light, gentle diet, herbal infusions.",
+        "caution": "The pancreas is vulnerable, and overeating leads to gastritis. Any surgical intervention is contraindicated."
+      },
+      "beauty_and_hair": "Refrain from haircuts and aggressive cosmetic procedures on the day of the Full Moon peak.",
+      "business_and_tasks": "Do not start new things and avoid big shopping. Finish current tasks and pay back debts.",
+      "dreams_and_intuition": "Dreams reflect inner struggle, hidden passions and the dark side of the subconscious, which calls for awareness.",
+      "talismans_and_stones": "Agate, morion, jet.",
+      "symbol": "Serpent, Jackal"
+    },
+    {
+      "id": 16,
+      "title": "16th lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "A harmonious distribution of strength, a release from the tension of the Full Moon.",
+        "resonance": "The spleen, blood cleansing.",
+        "recommended": "Moderate physical exercise, walks in the fresh air, drinking clean water and herbal blends.",
+        "caution": "Overeating, animal food and alcohol. The blood-forming organs are especially vulnerable."
+      },
+      "beauty_and_hair": "A wonderful day for a haircut: hair will be manageable and the style will hold for a long time. Any skin-cleansing treatments are favorable.",
+      "business_and_tasks": "A day of creativity, calm completion of tasks and harmony within the team. Tension eases, so you can plan trips and sign documents.",
+      "dreams_and_intuition": "Dreams are often prophetic and bring long-awaited psychological relief or the answer to a question that has been troubling you.",
+      "talismans_and_stones": "Spinel, tourmaline, pearl.",
+      "symbol": "Butterfly, Dove"
+    },
+    {
+      "id": 17,
+      "title": "17th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "The opening of inner freedom, the joy of life and the energy of love.",
+        "resonance": "The genitourinary system, the kidneys.",
+        "recommended": "Celebrations, time with friends, dancing, light outdoor exercise.",
+        "caution": "Alcohol, aggression, suppressing emotions, chilling the lower back."
+      },
+      "beauty_and_hair": "A haircut today will lift your mood, draw admiring glances and bring a surge of feminine or masculine energy.",
+      "business_and_tasks": "One of the most auspicious days for closing deals, presentations, creative projects, weddings and large gatherings.",
+      "dreams_and_intuition": "Dreams show the state of your inner freedom. If you dreamed of a celebration or of flying, you are on the right path.",
+      "talismans_and_stones": "Charoite, zircon, clear quartz.",
+      "symbol": "Bunch of grapes, Bell"
+    },
+    {
+      "id": 18,
+      "title": "18th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "A mirror day: the world around you reflects your hidden problems and complexes.",
+        "resonance": "The skin, the sense organs.",
+        "recommended": "Cleansing the skin, the bathhouse, massage, giving up bad habits and other people’s advice.",
+        "caution": "Yielding to other people’s influence, overtiring yourself, oversleeping. The kidneys and skin are vulnerable."
+      },
+      "beauty_and_hair": "Cutting the hair is categorically not recommended. It may worsen your health and provoke a rash or hair loss.",
+      "business_and_tasks": "Intrigue, deception and provocation from those around you are possible. Do not get drawn into arguments, and check all incoming information.",
+      "dreams_and_intuition": "Dreams may reveal how the people around you truly feel about you, or point to the root of your psychological blocks.",
+      "talismans_and_stones": "White agate, opal, blue sapphire.",
+      "symbol": "Mirror, Monkey"
+    },
+    {
+      "id": 19,
+      "title": "19th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "Heavy energy, an increased risk of injuries and emotional breakdowns.",
+        "resonance": "The large intestine, the psyche.",
+        "recommended": "Cleansing with fire (sitting by candlelight), mental cleansing, solitude.",
+        "caution": "Alcohol, new acquaintances, noisy company, loans and financial borrowing."
+      },
+      "beauty_and_hair": "Refrain from any manipulation of your hair and appearance, as the risk of an unsuccessful result is great.",
+      "business_and_tasks": "A critical day. Postpone signing contracts and important negotiations. Do only routine work that calls for working alone.",
+      "dreams_and_intuition": "You may have heavy, frightening dreams caused by the general energetic background of the day. Do not take them to heart.",
+      "talismans_and_stones": "Labradorite, bloodstone, jet.",
+      "symbol": "Spider, Web"
+    },
+    {
+      "id": 20,
+      "title": "20th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Overcoming doubts, spiritual uplift, victory over fears.",
+        "resonance": "The upper back, the shoulders, the circulatory system.",
+        "recommended": "Yoga, stretching, breaking bad habits, fasting or a light plant-based diet.",
+        "caution": "Pride, arrogance, abrupt movements, straining the shoulder girdle."
+      },
+      "beauty_and_hair": "A favorable day for a change of image and a haircut: hair will grow quickly and your mood will improve.",
+      "business_and_tasks": "An excellent time for a breakthrough in your affairs, a change of job, solving difficult problems and overcoming long-standing barriers in business.",
+      "dreams_and_intuition": "Dreams are often lucid. In a dream you can receive a hint about how to resolve a long-standing life problem.",
+      "talismans_and_stones": "Red jasper, jaspilite.",
+      "symbol": "Eagle, Flight"
+    },
+    {
+      "id": 21,
+      "title": "21st lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Activity, a striving for justice, cleansing of the blood and liver.",
+        "resonance": "The circulatory system, the liver, the bone marrow.",
+        "recommended": "Hardening, outdoor sports, water treatments, drinking pomegranate juice and clean water.",
+        "caution": "Overtiring the legs, joint injuries, heavy and fatty food."
+      },
+      "beauty_and_hair": "A wonderful day for a haircut: hair will grow stronger and your appearance more polished and radiant.",
+      "business_and_tasks": "A day of teamwork, creative uplift and finding like-minded people. Any group projects and trips are successful.",
+      "dreams_and_intuition": "Dreams often reflect the state of your health and your energetic potential.",
+      "talismans_and_stones": "Pyrite, zircon, aventurine, pyrope.",
+      "symbol": "Herd of horses, Chariot"
+    },
+    {
+      "id": 22,
+      "title": "22nd lunar day",
+      "status": "Нейтральный",
+      "health_and_body": {
+        "biorhythmic_status": "Accumulation of wisdom, receiving secret knowledge, a slowing of processes.",
+        "resonance": "The lower spine, the sacrum, the hips.",
+        "recommended": "Learning something new, working with archives, a moderate joint warm-up, spiritual practices.",
+        "caution": "Surgical procedures on the spine and hips, overeating (a tendency to gain weight)."
+      },
+      "beauty_and_hair": "A neutral day for a haircut. A good time for home skin and hair care treatments.",
+      "business_and_tasks": "A time for wise decisions. It is favorable to pass on experience to students, engage in scientific work and analyze past mistakes.",
+      "dreams_and_intuition": "Dreams carry hints from the past. Solutions to problems you have long struggled with often come in dreams.",
+      "talismans_and_stones": "Blue agate, sapphire, amber.",
+      "symbol": "Book, Scroll, Key"
+    },
+    {
+      "id": 23,
+      "title": "23rd lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "Energy depletion, vampirism, restructuring of the body.",
+        "resonance": "The spine, the reproductive system.",
+        "recommended": "A thorough cleaning of the home, clearing the space with salt and fire, solitude.",
+        "caution": "Crowds, conflicts, aggression, overeating, eating meat. This is an injury-prone day."
+      },
+      "beauty_and_hair": "Cutting the hair is categorically not recommended, as it may lead to worse health and conflicts.",
+      "business_and_tasks": "A hard day. Postpone important negotiations and project launches. Finish routine tasks and get rid of clutter.",
+      "dreams_and_intuition": "You may have heavy, troubling dreams. Do not give them a literal meaning, as they are merely a release of tension.",
+      "talismans_and_stones": "Black jade, sardonyx, crocodilite.",
+      "symbol": "Makara crocodile, Weaver woman"
+    },
+    {
+      "id": 24,
+      "title": "24th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "The awakening of powerful forces of nature, creative energy, healing.",
+        "resonance": "The reproductive system, the spleen.",
+        "recommended": "Strength training, strengthening your health, yoga, laying foundations, family practices.",
+        "caution": "Passivity and despondency (they block creative energy), chilling."
+      },
+      "beauty_and_hair": "A favorable day for a haircut: hair will become thick and strong. An excellent time for wellness treatments.",
+      "business_and_tasks": "A wonderful day for large-scale undertakings, construction, financial investments and signing long-term contracts.",
+      "dreams_and_intuition": "Dreams may show your potential and hidden reserves of energy. Good signs in a dream symbolize victory.",
+      "talismans_and_stones": "Belomorite, zircon, malachite.",
+      "symbol": "Bear, Mountain"
+    },
+    {
+      "id": 25,
+      "title": "25th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "A drop in overall tone, a need for silence and slowing down.",
+        "resonance": "The ears, the nervous system, the fluid balance.",
+        "recommended": "Full rest, meditation, a fasting day, solitude in nature.",
+        "caution": "Bustle, haste, loud music, overloading the organs of hearing, alcohol."
+      },
+      "beauty_and_hair": "Refrain from going to the hair salon, as a haircut may attract melancholy and headaches.",
+      "business_and_tasks": "The day is not suited to active action. Do only what requires no haste and no risky decisions.",
+      "dreams_and_intuition": "Intuition sharpens. Dreams may be prophetic, but because of fatigue they are easy to interpret wrongly.",
+      "talismans_and_stones": "Tiger’s eye, hawk’s eye, heliodor.",
+      "symbol": "Turtle, Shell, Urn"
+    },
+    {
+      "id": 26,
+      "title": "26th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "Emotional swings, a tendency toward conflict and vanity.",
+        "resonance": "The shoulders, the teeth, the bones.",
+        "recommended": "Cleansing treatments, the bathhouse, a light diet, keeping your emotions in check.",
+        "caution": "Idle talk, gossip, shopping (the risk of spending money on things you do not need). The teeth are vulnerable."
+      },
+      "beauty_and_hair": "A haircut today is extremely unfavorable, as it may provoke conflicts with loved ones and depression.",
+      "business_and_tasks": "A high risk of quarrels with partners and colleagues. Avoid having it out with people and closing financial deals.",
+      "dreams_and_intuition": "Dreams show your illusions and where you are wasting energy.",
+      "talismans_and_stones": "Nephrite, jadeite, chrysoprase.",
+      "symbol": "Toad, Swamp"
+    },
+    {
+      "id": 27,
+      "title": "27th lunar day",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Receiving flashes of insight, intuitive revelation, harmonization of the water in the body.",
+        "resonance": "The ankles, the shins.",
+        "recommended": "Water treatments, swimming, walks by bodies of water, spiritual practices and prayer.",
+        "caution": "Alcohol and chemical drugs, as the body is incredibly sensitive to toxins."
+      },
+      "beauty_and_hair": "A haircut will bring joy, improve intuition and give the hair a beautiful shine.",
+      "business_and_tasks": "A wonderful day for creative tasks, finding unconventional ways out of crises and charity.",
+      "dreams_and_intuition": "Dreams tonight are clear and prophetic. They often carry deep spiritual revelations and guidance from above.",
+      "talismans_and_stones": "Amethyst, rose quartz, selenite.",
+      "symbol": "Trident, Ship, Staff"
+    },
+    {
+      "id": 28,
+      "title": "28th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "The completion of the lunar month, work on the subtle planes, vulnerable eyesight.",
+        "resonance": "The eyes, the skin, the endocrine system.",
+        "recommended": "Caring for your eyesight, relaxation, keeping watch over your thoughts, completing tasks.",
+        "caution": "Straining the eyes, bright light, picking flowers and plants, pessimism."
+      },
+      "beauty_and_hair": "A haircut is not recommended, but you can use light masks for the face and scalp.",
+      "business_and_tasks": "Sum things up, pay off debts, close old matters. Starting new projects is categorically off limits.",
+      "dreams_and_intuition": "Dreams reflect karmic lessons and show how rightly you have lived the departing lunar month.",
+      "talismans_and_stones": "Aragonite, chrysoprase, belomorite.",
+      "symbol": "Lotus, Karma"
+    },
+    {
+      "id": 29,
+      "title": "29th lunar day",
+      "status": "Критический",
+      "health_and_body": {
+        "biorhythmic_status": "The hardest day of the month. Energy is at zero, with a risk of depression and injury.",
+        "resonance": "The large intestine, the entire musculoskeletal system.",
+        "recommended": "Complete cleansing on every level, lighting candles, getting rid of clutter and toxic people.",
+        "caution": "Darkness, unfamiliar roads, sharp objects, alcohol, negative thoughts."
+      },
+      "beauty_and_hair": "Cutting the hair and nails is categorically forbidden, as it takes away your last strength and health.",
+      "business_and_tasks": "A critical day. No deals, trips or negotiations. Only protection, safety and inner solitude.",
+      "dreams_and_intuition": "You often have heavy nightmares. Do not believe them: they are the underside of the closing cycle and will evaporate by morning.",
+      "talismans_and_stones": "Opal, labradorite, charoite.",
+      "symbol": "Hydra, Octopus"
+    },
+    {
+      "id": 30,
+      "title": "30th lunar day",
+      "note": "does not occur every month",
+      "status": "Благоприятный",
+      "health_and_body": {
+        "biorhythmic_status": "Love, taking stock, harmony, the joy of being.",
+        "resonance": "Cellular rejuvenation, the heart.",
+        "recommended": "Gratitude for the month gone by, helping others, light food, unity with your family.",
+        "caution": "Displays of selfishness, sadness, unfinished plans."
+      },
+      "beauty_and_hair": "A favorable day for lightly refreshing your hairstyle and for relaxing spa treatments.",
+      "business_and_tasks": "A day of mercy and love. Complete all your tasks, rejoice in the results and prepare for the New Moon.",
+      "dreams_and_intuition": "Dreams are bright, joyful and short. They show the blessing of the higher powers on the next cycle.",
+      "talismans_and_stones": "White pearl, tourmaline, diamond.",
+      "symbol": "Golden Swan"
+    }
+  ]
+}
