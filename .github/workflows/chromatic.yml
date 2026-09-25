@@ -1,0 +1,37 @@
+name: Chromatic
+
+# Publishes Storybook to Chromatic on every push to main and on pull requests, so each
+# change gets a visual-regression build and a shareable Storybook link.
+# Requires the repository secret CHROMATIC_PROJECT_TOKEN (Settings -> Secrets and variables
+# -> Actions). Without it the job still passes and just skips the Chromatic step.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Chromatic needs the full git history to find the baseline build.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Publish Storybook to Chromatic
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        run: npx chromatic --exit-zero-on-changes
+
+      - name: Chromatic skipped
+        if: env.CHROMATIC_PROJECT_TOKEN == ''
+        run: echo "::notice::CHROMATIC_PROJECT_TOKEN secret is not set, skipping Chromatic."

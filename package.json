@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.14",
@@ -34,6 +35,7 @@
     "@vitejs/plugin-react": "^4.3.2",
     "@vitest/browser-playwright": "^4.1.11",
     "autoprefixer": "^10.4.20",
+    "chromatic": "^18.9.5",
     "playwright": "^1.63.0",
     "postcss": "^8.4.47",
     "storybook": "^10.6.0",
