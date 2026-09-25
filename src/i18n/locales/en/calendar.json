@@ -1,0 +1,23 @@
+{
+  "eyebrow": "LUNAR CALENDAR",
+  "heading": "Monthly calendar",
+  "prevMonth": "Previous month",
+  "nextMonth": "Next month",
+  "selectMonth": "Select month",
+  "lunarDaySuffix": "ld",
+  "legendTitle": "Status legend",
+  "retrograde": {
+    "title": "RETROGRADE PLANETS",
+    "empty": "No retrograde periods for this year"
+  },
+  "eclipse": {
+    "title": "ECLIPSES {{year}}",
+    "empty": "No eclipses for this year"
+  },
+  "moonEvent": {
+    "full_moon": "Full Moon",
+    "new_moon": "New Moon"
+  },
+  "from": "from",
+  "noChange": "no change"
+}

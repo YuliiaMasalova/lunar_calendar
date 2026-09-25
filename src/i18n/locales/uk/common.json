@@ -1,0 +1,56 @@
+{
+  "app": { "name": "AuraLunar" },
+  "nav": { "today": "СЬОГОДНІ", "calendar": "КАЛЕНДАР МІСЯЦЯ" },
+  "lang": { "label": "Мова" },
+  "location": {
+    "label": "Локація",
+    "placeholder": "Пошук міста…",
+    "detect": "Визначити автоматично",
+    "detecting": "Визначаємо…",
+    "empty": "Місто не знайдено",
+    "searching": "Пошук…",
+    "searchError": "Не вдалося виконати пошук. Перевірте з'єднання.",
+    "error": "Не вдалося визначити локацію",
+    "privacy": "Координати використовуються лише для астрономічного розрахунку й не передаються третім сторонам."
+  },
+  "status": {
+    "favorable": "Сприятливий",
+    "neutral": "Нейтральний",
+    "critical": "Критичний"
+  },
+  "state": {
+    "loading": "Завантаження…",
+    "errorTitle": "Не вдалося завантажити дані",
+    "retry": "Повторити",
+    "empty": "Немає даних"
+  },
+  "zodiac": {
+    "aries": "Овен",
+    "taurus": "Телець",
+    "gemini": "Близнюки",
+    "cancer": "Рак",
+    "leo": "Лев",
+    "virgo": "Діва",
+    "libra": "Терези",
+    "scorpio": "Скорпіон",
+    "sagittarius": "Стрілець",
+    "capricorn": "Козоріг",
+    "aquarius": "Водолій",
+    "pisces": "Риби"
+  },
+  "moonPhase": {
+    "new_moon": "Молодик",
+    "waxing_crescent": "Зростаючий серп",
+    "first_quarter": "Перша чверть",
+    "waxing_gibbous": "Зростаючий Місяць",
+    "full_moon": "Повня",
+    "waning_gibbous": "Спадний Місяць",
+    "last_quarter": "Остання чверть",
+    "waning_crescent": "Спадний серп"
+  },
+  "offline": "Офлайн · дані з кешу",
+  "footer": {
+    "engine": "AuraLunar Ephemeris Engine · Sidereal & Tropical precision computation",
+    "copyright": "{{coords}} · © {{year}} AuraLunar"
+  }
+}

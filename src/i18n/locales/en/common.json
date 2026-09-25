@@ -1,0 +1,56 @@
+{
+  "app": { "name": "AuraLunar" },
+  "nav": { "today": "TODAY", "calendar": "MONTHLY CALENDAR" },
+  "lang": { "label": "Language" },
+  "location": {
+    "label": "Location",
+    "placeholder": "Search city…",
+    "detect": "Detect automatically",
+    "detecting": "Detecting…",
+    "empty": "No city found",
+    "searching": "Searching…",
+    "searchError": "Search failed. Check your connection.",
+    "error": "Could not detect location",
+    "privacy": "Coordinates are used only for the astronomical calculation and are not shared with third parties."
+  },
+  "status": {
+    "favorable": "Favorable",
+    "neutral": "Neutral",
+    "critical": "Critical"
+  },
+  "state": {
+    "loading": "Loading…",
+    "errorTitle": "Could not load data",
+    "retry": "Retry",
+    "empty": "No data"
+  },
+  "zodiac": {
+    "aries": "Aries",
+    "taurus": "Taurus",
+    "gemini": "Gemini",
+    "cancer": "Cancer",
+    "leo": "Leo",
+    "virgo": "Virgo",
+    "libra": "Libra",
+    "scorpio": "Scorpio",
+    "sagittarius": "Sagittarius",
+    "capricorn": "Capricorn",
+    "aquarius": "Aquarius",
+    "pisces": "Pisces"
+  },
+  "moonPhase": {
+    "new_moon": "New Moon",
+    "waxing_crescent": "Waxing Crescent",
+    "first_quarter": "First Quarter",
+    "waxing_gibbous": "Waxing Gibbous",
+    "full_moon": "Full Moon",
+    "waning_gibbous": "Waning Gibbous",
+    "last_quarter": "Last Quarter",
+    "waning_crescent": "Waning Crescent"
+  },
+  "offline": "Offline · cached data",
+  "footer": {
+    "engine": "AuraLunar Ephemeris Engine · Sidereal & Tropical precision computation",
+    "copyright": "{{coords}} · © {{year}} AuraLunar"
+  }
+}

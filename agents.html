@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карта команди агентів</title>
+<style>
+  :root{
+    --bg:#0f1220; --card:#191d2e; --line:#2a3050; --txt:#e7e9f3;
+    --muted:#9aa3c4; --accent:#7c9cff; --ok:#4ade80; --warn:#fbbf24; --pink:#f472b6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--txt);line-height:1.5;padding:32px 20px 60px}
+  h1{font-size:26px;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 28px}
+  .wrap{max-width:960px;margin:0 auto}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:0 0 34px}
+  .step{flex:1 1 150px;min-width:150px;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px}
+  .step .n{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.06em}
+  .step h3{margin:6px 0 4px;font-size:16px}
+  .step p{margin:0;font-size:13px;color:var(--muted)}
+  .arrow{align-self:center;color:var(--muted);font-size:20px;flex:0 0 auto}
+  .branch{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin:0 0 34px}
+  .branch h2{margin:0 0 10px;font-size:17px}
+  .branch .row{display:flex;gap:14px;flex-wrap:wrap}
+  .b{flex:1 1 260px;border-radius:12px;padding:12px 14px;font-size:14px}
+  .b.yes{background:rgba(124,156,255,.12);border:1px solid var(--accent)}
+  .b.no{background:rgba(244,114,182,.10);border:1px solid var(--pink)}
+  .b b{display:block;margin-bottom:4px}
+  .b code{background:#00000040;padding:2px 6px;border-radius:6px;font-size:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .role{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .role .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+    padding:3px 9px;border-radius:99px;background:rgba(124,156,255,.15);color:var(--accent);margin-bottom:8px}
+  .role h3{margin:0 0 6px;font-size:17px}
+  .role .does{font-size:13.5px;color:var(--muted);margin:0 0 10px}
+  .role .zone{font-size:12px;color:var(--txt)}
+  .role .zone span{color:var(--muted)}
+  .stop{color:var(--warn);font-weight:600}
+  h2.section{margin:6px 0 14px;font-size:15px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🌙 Карта команди агентів</h1>
+  <p class="sub">LEAD оркеструє єдиний пайплайн. Storybook — обов'язковий крок для кожної задачі.</p>
+
+  <h2 class="section">Послідовність кроків</h2>
+  <div class="flow">
+    <div class="step"><div class="n">01</div><h3>spec</h3><p>ТЗ / Figma → SPEC.md</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="n">02</div><h3>builder</h3><p>Vite+React+TS за SPEC</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="n">03</div><h3>reviewer</h3><p>read-only → PASS/FAIL</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="n">04</div><h3>storybook<br><small style="color:var(--pink)">обов'язково</small></h3><p>прев'ю + Chromatic → <span class="stop">СТОП на ОК</span></p></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="n">05</div><h3>shipper</h3><p>commit + push → live URL</p></div>
+  </div>
+
+  <div class="branch">
+    <h2>✅ Storybook — обов'язковий етап</h2>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:13.5px">Для будь-якої задачі/лінки пайплайн один і той самий — Storybook не пропускається.</p>
+    <div class="row">
+      <div class="b yes" style="flex:1 1 100%">
+        <b>Єдиний потік</b>
+        <code>spec → builder → reviewer → storybook → (твоє ОК) → shipper</code>
+        <p style="margin:8px 0 0;color:var(--muted);font-size:12.5px">storybook завжди дає локальний прев'ю + Chromatic-лінк і зупиняється на твоє ОК перед push.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section">Ролі та зони відповідальності</h2>
+  <div class="grid">
+    <div class="role">
+      <span class="tag">ОРКЕСТРАТОР</span>
+      <h3>lead</h3>
+      <p class="does">Керує пайплайном, маршрутизує задачі, ставить питання, чекає ОК перед push.</p>
+      <p class="zone"><span>Зона:</span> координація, рішення, гілка Storybook так/ні.</p>
+    </div>
+    <div class="role">
+      <span class="tag">1 · SPEC</span>
+      <h3>spec</h3>
+      <p class="does">З ТЗ/Figma пише SPEC.md: екрани, стани, поведінка, edge cases, вимога Tailwind.</p>
+      <p class="zone"><span>Зона:</span> єдине джерело правди.</p>
+    </div>
+    <div class="role">
+      <span class="tag">2 · BUILD</span>
+      <h3>builder</h3>
+      <p class="does">Vite + React + TS суворо за SPEC. Чисто, просто. Стилі — Tailwind CSS.</p>
+      <p class="zone"><span>Зона:</span> реалізація коду.</p>
+    </div>
+    <div class="role">
+      <span class="tag">3 · REVIEW</span>
+      <h3>reviewer</h3>
+      <p class="does">Read-only: відповідність SPEC, усі стани, базова a11y, Tailwind → PASS/FAIL.</p>
+      <p class="zone"><span>Зона:</span> контроль якості (нічого не редагує).</p>
+    </div>
+    <div class="role">
+      <span class="tag">4 · PREVIEW</span>
+      <h3>storybook <small style="color:var(--pink)">обов'язково</small></h3>
+      <p class="does">Story на кожен стан, лінк на Storybook + npx chromatic лінк. <span class="stop">Зупиняється на ОК.</span></p>
+      <p class="zone"><span>Зона:</span> візуальний прев'ю компонента.</p>
+    </div>
+    <div class="role">
+      <span class="tag">5 · SHIP</span>
+      <h3>shipper</h3>
+      <p class="does">Після ОК: git commit + push у GitHub. Chromatic + Cloudflare деплоять самі.</p>
+      <p class="zone"><span>Зона:</span> Chromatic-лінк + live URL.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

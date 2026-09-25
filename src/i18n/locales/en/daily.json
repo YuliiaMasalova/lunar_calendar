@@ -1,0 +1,46 @@
+{
+  "eyebrowToday": "CELESTIAL FORECAST FOR TODAY",
+  "lunarDay": "Lunar day {{days}}",
+  "moonIn": "MOON IN",
+  "fallbackNote": "translation unavailable, showing Russian",
+  "category": {
+    "chip": {
+      "health_and_body": "HEALTH & BODY",
+      "beauty": "BEAUTY & HAIRCUTS",
+      "business": "BUSINESS & AFFAIRS",
+      "dreams": "DREAMS & INTUITION",
+      "talismans": "TALISMANS & STONES"
+    },
+    "heading": {
+      "health_and_body": "Health & body resonance",
+      "beauty": "Beauty & care",
+      "business": "Business & affairs",
+      "dreams": "Dreams & intuition",
+      "talismans": "Talismans & stones"
+    },
+    "label": "Categories"
+  },
+  "lunarDaySwitcher": "Switch lunar day",
+  "recommended": "RECOMMENDED",
+  "caution": "CAUTION",
+  "biorhythm": "Biorhythm status",
+  "phase": "Phase",
+  "aspects": {
+    "title": "PLANETARY ASPECTS",
+    "empty": "No significant aspects"
+  },
+  "badge": {
+    "harmony": "120° HARMONY",
+    "tension": "90° TENSION",
+    "insight": "60° INSIGHT",
+    "transit": "TRANSIT"
+  },
+  "parameters": {
+    "title": "DAY PARAMETERS",
+    "moonrise": "Moonrise:",
+    "moonset": "Moonset:",
+    "moonriseSet": "Moonrise / Moonset:",
+    "illumination": "Illumination:",
+    "voidOfCourse": "Void of Course:"
+  }
+}

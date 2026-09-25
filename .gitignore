@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+*storybook.log
+storybook-static
+
+# env files (never commit secrets); keep a template if one is added
+.env
+.env.*
+!.env.example
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# local Claude Code settings (per-machine)
+.claude/settings.local.json

@@ -1,0 +1,56 @@
+{
+  "app": { "name": "AuraLunar" },
+  "nav": { "today": "СЕГОДНЯ", "calendar": "КАЛЕНДАРЬ МЕСЯЦА" },
+  "lang": { "label": "Язык" },
+  "location": {
+    "label": "Локация",
+    "placeholder": "Поиск города…",
+    "detect": "Определить автоматически",
+    "detecting": "Определяем…",
+    "empty": "Город не найден",
+    "searching": "Поиск…",
+    "searchError": "Не удалось выполнить поиск. Проверьте соединение.",
+    "error": "Не удалось определить локацию",
+    "privacy": "Координаты используются только для астрономического расчёта и не передаются третьим сторонам."
+  },
+  "status": {
+    "favorable": "Благоприятный",
+    "neutral": "Нейтральный",
+    "critical": "Критический"
+  },
+  "state": {
+    "loading": "Загрузка…",
+    "errorTitle": "Не удалось загрузить данные",
+    "retry": "Повторить",
+    "empty": "Нет данных"
+  },
+  "zodiac": {
+    "aries": "Овен",
+    "taurus": "Телец",
+    "gemini": "Близнецы",
+    "cancer": "Рак",
+    "leo": "Лев",
+    "virgo": "Дева",
+    "libra": "Весы",
+    "scorpio": "Скорпион",
+    "sagittarius": "Стрелец",
+    "capricorn": "Козерог",
+    "aquarius": "Водолей",
+    "pisces": "Рыбы"
+  },
+  "moonPhase": {
+    "new_moon": "Новолуние",
+    "waxing_crescent": "Растущий серп",
+    "first_quarter": "Первая четверть",
+    "waxing_gibbous": "Растущая Луна",
+    "full_moon": "Полнолуние",
+    "waning_gibbous": "Убывающая Луна",
+    "last_quarter": "Последняя четверть",
+    "waning_crescent": "Убывающий серп"
+  },
+  "offline": "Офлайн · данные из кэша",
+  "footer": {
+    "engine": "AuraLunar Ephemeris Engine · Sidereal & Tropical precision computation",
+    "copyright": "{{coords}} · © {{year}} AuraLunar"
+  }
+}
