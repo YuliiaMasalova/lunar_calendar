@@ -158,7 +158,7 @@ export function CalendarGrid({
 
       {/* Desktop: 7-column grid with roving keyboard navigation. */}
       <div role="grid" aria-label={t('calendar:heading')} className="hidden select-none md:block">
-        <div role="row" className="grid grid-cols-7 gap-8 pb-8">
+        <div role="row" className="grid grid-cols-7 gap-x-[10px] pb-8">
           {labels.map((label) => (
             <div
               key={label}
@@ -171,17 +171,17 @@ export function CalendarGrid({
         </div>
 
         {isLoading ? (
-          <div className="grid grid-cols-7 gap-8">
+          <div className="grid grid-cols-7 gap-[10px]">
             {Array.from({ length: weeks.length * 7 }).map((_, i) => (
               <Skeleton key={i} className="h-[128px] rounded-lg" />
             ))}
           </div>
         ) : (
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-[10px]">
             {weeks.map((week, r) => {
               cellRefs.current[r] = cellRefs.current[r] ?? [];
               return (
-                <div role="row" key={r} className="grid grid-cols-7 gap-8">
+                <div role="row" key={r} className="grid grid-cols-7 gap-x-[10px]">
                   {week.map((date, c) => {
                     const iso = toISODate(date);
                     const inMonth = date.getMonth() === month - 1;
