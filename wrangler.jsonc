@@ -2,7 +2,7 @@
   // Cloudflare Workers static assets deploy for the Vite build (dist/).
   // The name must match the Worker name in the Cloudflare dashboard.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "lunar-calendar",
+  "name": "app",
   "compatibility_date": "2026-09-01",
   "assets": {
     "directory": "./dist",
