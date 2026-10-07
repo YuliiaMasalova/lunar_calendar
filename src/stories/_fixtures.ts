@@ -145,3 +145,46 @@ export const astro29: AstroData = {
   ],
   day_status: 'critical',
 };
+
+/** 28 → 29 → 1 inside one date: 29 starts 06:31, the New Moon (day 1) begins 18:50. */
+export const astro29Triple: AstroData = {
+  ...astroDouble,
+  date: '2026-10-10',
+  lunar_day_number: 28,
+  lunar_days: [28, 29, 1],
+  lunar_day_transition_time: '06:31',
+  lunar_day_spans: [
+    { day: 28, start: { date: '2026-10-09', time: '05:12' }, end: { date: '2026-10-10', time: '06:31' } },
+    { day: 29, start: { date: '2026-10-10', time: '06:31' }, end: { date: '2026-10-10', time: '18:50' } },
+    { day: 1, start: { date: '2026-10-10', time: '18:50' }, end: { date: '2026-10-11', time: '08:11' } },
+  ],
+  day_status: 'critical',
+};
+
+/** 29 → 30 → 1: day 29 began on the previous date, so its start is spelled out. */
+export const astro29First: AstroData = {
+  ...astroDouble,
+  date: '2026-10-10',
+  lunar_day_number: 29,
+  lunar_days: [29, 30, 1],
+  lunar_day_transition_time: '06:54',
+  lunar_day_spans: [
+    { day: 29, start: { date: '2026-10-09', time: '05:37' }, end: { date: '2026-10-10', time: '06:54' } },
+    { day: 30, start: { date: '2026-10-10', time: '06:54' }, end: { date: '2026-10-10', time: '18:50' } },
+    { day: 1, start: { date: '2026-10-10', time: '18:50' }, end: { date: '2026-10-11', time: '08:11' } },
+  ],
+  day_status: 'critical',
+};
+
+/** Only day 29 on this date: both its start and its end fall on other dates. */
+export const astro29Only: AstroData = {
+  ...astroDouble,
+  date: '2026-10-10',
+  lunar_day_number: 29,
+  lunar_days: [29],
+  lunar_day_transition_time: null,
+  lunar_day_spans: [
+    { day: 29, start: { date: '2026-10-09', time: '23:10' }, end: { date: '2026-10-11', time: '00:20' } },
+  ],
+  day_status: 'critical',
+};

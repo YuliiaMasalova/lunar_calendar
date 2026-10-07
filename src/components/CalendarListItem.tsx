@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import type { AstroData } from '../types/astro';
-import { highlightedDayRange, lunarDayLabel, timeMarkerLabel } from '../utils/cellLabels';
+import { cellTimeLines, lunarDayLabel } from '../utils/cellLabels';
 import { ZodiacIcon } from './ZodiacIcon';
 import { statusClasses } from './CalendarCell';
 
@@ -29,7 +29,7 @@ export function CalendarListItem({
 }: CalendarListItemProps) {
   const { t } = useTranslation();
   const status = astro?.day_status ?? 'neutral';
-  const range = astro ? highlightedDayRange(astro, t) : null;
+  const lines = astro ? cellTimeLines(astro, t) : [''];
   return (
     <button
       type="button"
@@ -73,16 +73,11 @@ export function CalendarListItem({
 
         {/* Нижняя строка: Время */}
         {/* Добавлен класс whitespace-nowrap для защиты от случайных переносов времени */}
-        {range ? (
-          <span className="flex flex-col items-end text-cal-lunar-time text-text-tertiary whitespace-nowrap">
-            <span>{range.from}</span>
-            <span>{range.to}</span>
-          </span>
-        ) : (
-          <span className="text-cal-lunar-time text-text-tertiary whitespace-nowrap">
-            {astro ? timeMarkerLabel(astro, t) : ''}
-          </span>
-        )}
+        <span className="flex flex-col items-end text-cal-lunar-time text-text-tertiary whitespace-nowrap">
+          {lines.map((line) => (
+            <span key={line}>{line}</span>
+          ))}
+        </span>
         
       </div>
     </button>
