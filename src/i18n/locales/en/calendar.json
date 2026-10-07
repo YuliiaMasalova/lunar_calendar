@@ -19,5 +19,6 @@
     "new_moon": "New Moon"
   },
   "from": "from",
+  "until": "until",
   "noChange": "no change"
 }

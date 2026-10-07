@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import type { AstroData } from '../types/astro';
 import { formatLatitude } from '../utils/format';
+import { momentLabel } from '../utils/cellLabels';
 
 interface DayParametersProps {
   astro: AstroData;
@@ -27,6 +28,15 @@ export function DayParameters({ astro }: DayParametersProps) {
     rows.push({ label: t('daily:parameters.moonrise'), value: astro.moonrise });
   } else if (astro.moonset) {
     rows.push({ label: t('daily:parameters.moonset'), value: astro.moonset });
+  }
+
+  // Exact start — end of each lunar day active today (a day can begin/end on another date).
+  for (const span of astro.lunar_day_spans) {
+    if (!astro.lunar_days.includes(span.day)) continue;
+    rows.push({
+      label: t('daily:parameters.lunarDay', { day: span.day }),
+      value: `${momentLabel(span.start, astro.date)} — ${momentLabel(span.end, astro.date)}`,
+    });
   }
 
   rows.push({

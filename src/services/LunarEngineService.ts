@@ -24,6 +24,7 @@ export class AstronomyLunarEngine implements LunarEngineService {
       lunar_day_number: c.lunarDays[0],
       lunar_days: c.lunarDays,
       lunar_day_transition_time: c.lunarDayTransitionTime,
+      lunar_day_spans: c.lunarDaySpans,
       moon_phase: c.moonPhase,
       illumination_percent: c.illuminationPercent,
       zodiac_sign: c.zodiacSign,

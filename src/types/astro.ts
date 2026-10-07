@@ -37,6 +37,19 @@ export interface VoidOfCourse {
   end: string; // HH:mm
 }
 
+/** A wall-clock moment in the observer's timezone (the date matters: a lunar day spans two dates). */
+export interface LocalMoment {
+  date: ISODate;
+  time: string; // HH:mm
+}
+
+/** One lunar day with its real start and end (end = next moonrise, or the New Moon). */
+export interface LunarDaySpan {
+  day: number;
+  start: LocalMoment;
+  end: LocalMoment;
+}
+
 /**
  * Layer A contract (SPEC §3). The astro service always returns this shape.
  * `lunar_days` extends the base contract to carry double/triple lunar days
@@ -48,6 +61,8 @@ export interface AstroData {
   lunar_day_number: number;
   lunar_days: number[];
   lunar_day_transition_time: string | null; // HH:mm or null
+  /** Start/end of every lunar day active during this local date (may begin/end on other dates). */
+  lunar_day_spans: LunarDaySpan[];
   moon_phase: MoonPhase;
   illumination_percent: number;
   zodiac_sign: ZodiacSign;

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { AstroData } from '../types/astro';
 import type { DayStatus } from '../types/status';
 import { ZodiacIcon } from './ZodiacIcon';
-import { lunarDayLabel, timeMarkerLabel } from '../utils/cellLabels';
+import { cellTimeLines, lunarDayLabel } from '../utils/cellLabels';
 
 interface CalendarCellProps {
   date: Date;
@@ -95,6 +95,8 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
     }
 
     const status = astro?.day_status ?? 'neutral';
+    const lines = astro ? cellTimeLines(astro, t) : [''];
+    const multiLine = lines.length > 1;
 
     return (
       <button
@@ -128,10 +130,19 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
           )}
         </div>
 
-        <span className="text-display-cal text-text-heading-secondary">{dayNumber}</span>
+        {/* Lunar day 29 can need two lines, so the date number tightens to keep 128px. */}
+        <span
+          className={`text-display-cal text-text-heading-secondary ${multiLine ? 'leading-[40px]' : ''}`}
+        >
+          {dayNumber}
+        </span>
 
-        <span className="truncate text-cal-lunar-time text-text-disabled-strong">
-          {astro ? timeMarkerLabel(astro, t) : ''}
+        <span className="flex flex-col text-cal-lunar-time text-text-disabled-strong">
+          {lines.map((line) => (
+            <span key={line} className="truncate">
+              {line}
+            </span>
+          ))}
         </span>
       </button>
     );
