@@ -14,6 +14,7 @@ export const astro15: AstroData = {
   lunar_day_number: 15,
   lunar_days: [15],
   lunar_day_transition_time: null,
+  lunar_day_spans: [],
   moon_phase: 'full_moon',
   illumination_percent: 100,
   zodiac_sign: 'pisces',
@@ -129,4 +130,18 @@ export const contentNoAspects: DayContent = {
     talismans: 'Символ: Ветер. Камни: аметист, флюорит.',
   },
   planetary_aspects: [],
+};
+
+/** Lunar day 29 (Kyiv, 9 Oct 2026): starts today 05:37, ends next day 06:54 (30th day begins). */
+export const astro29: AstroData = {
+  ...astroDouble,
+  date: '2026-10-09',
+  lunar_day_number: 28,
+  lunar_days: [28, 29],
+  lunar_day_transition_time: '05:37',
+  lunar_day_spans: [
+    { day: 28, start: { date: '2026-10-08', time: '04:18' }, end: { date: '2026-10-09', time: '05:37' } },
+    { day: 29, start: { date: '2026-10-09', time: '05:37' }, end: { date: '2026-10-10', time: '06:54' } },
+  ],
+  day_status: 'critical',
 };

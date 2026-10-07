@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { AstroData } from '../types/astro';
 import type { DayStatus } from '../types/status';
 import { ZodiacIcon } from './ZodiacIcon';
-import { lunarDayLabel, timeMarkerLabel } from '../utils/cellLabels';
+import { highlightedDayRange, lunarDayLabel, timeMarkerLabel } from '../utils/cellLabels';
 
 interface CalendarCellProps {
   date: Date;
@@ -95,6 +95,7 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
     }
 
     const status = astro?.day_status ?? 'neutral';
+    const range = astro ? highlightedDayRange(astro, t) : null;
 
     return (
       <button
@@ -128,11 +129,23 @@ export const CalendarCell = forwardRef<HTMLButtonElement, CalendarCellProps>(
           )}
         </div>
 
-        <span className="text-display-cal text-text-heading-secondary">{dayNumber}</span>
-
-        <span className="truncate text-cal-lunar-time text-text-disabled-strong">
-          {astro ? timeMarkerLabel(astro, t) : ''}
+        {/* Lunar day 29: two lines (start / end), so the date number tightens to keep 128px. */}
+        <span
+          className={`text-display-cal text-text-heading-secondary ${range ? 'leading-[40px]' : ''}`}
+        >
+          {dayNumber}
         </span>
+
+        {range ? (
+          <span className="flex flex-col text-cal-lunar-time text-text-disabled-strong">
+            <span className="truncate">{range.from}</span>
+            <span className="truncate">{range.to}</span>
+          </span>
+        ) : (
+          <span className="truncate text-cal-lunar-time text-text-disabled-strong">
+            {astro ? timeMarkerLabel(astro, t) : ''}
+          </span>
+        )}
       </button>
     );
   },

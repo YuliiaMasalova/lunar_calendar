@@ -4,7 +4,7 @@ import { userEvent, within } from 'storybook/test';
 import { CalendarCell } from '../components/CalendarCell';
 import type { AstroData } from '../types/astro';
 import type { DayStatus } from '../types/status';
-import { cellAstro, astroDouble, astroTriple } from './_fixtures';
+import { cellAstro, astro29, astroDouble, astroTriple } from './_fixtures';
 
 const noop = () => {};
 const DATE = new Date('2027-10-12T00:00:00');
@@ -56,6 +56,11 @@ export const Neutral: Story = {
 };
 export const Critical: Story = {
   render: () => <Cell astro={cellAstro('critical')} />,
+};
+
+/** Lunar day 29: exact start and end (the next day begins at the end time). */
+export const LunarDay29: Story = {
+  render: () => <Cell astro={astro29} />,
 };
 
 export const Selected: Story = {

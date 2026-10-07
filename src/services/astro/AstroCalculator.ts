@@ -3,12 +3,13 @@ import type {
   AspectGeometry,
   ComputedAspect,
   ISODate,
+  LunarDaySpan,
   MoonPhase,
   PlanetId,
   ZodiacSign,
 } from '../../types/astro';
 import { ZODIAC_ORDER } from '../../utils/zodiac';
-import { formatLocalTime, localMidnightUtc } from '../../utils/timezone';
+import { formatLocalIsoDate, formatLocalTime, localMidnightUtc } from '../../utils/timezone';
 
 /**
  * Layer A — real astronomical engine (astronomy-engine, pure JS, no API key,
@@ -26,6 +27,7 @@ export type { PlanetId, AspectGeometry, ComputedAspect } from '../../types/astro
 export interface AstroComputation {
   lunarDays: number[];
   lunarDayTransitionTime: string | null;
+  lunarDaySpans: LunarDaySpan[];
   moonPhase: MoonPhase;
   illuminationPercent: number;
   zodiacSign: ZodiacSign;
@@ -220,6 +222,63 @@ function walkLunarDays(
   return { lunarDays: days, lunarDayTransitionAt: transitionAt };
 }
 
+/**
+ * Real start/end of every lunar day touching [t0, t1). Boundaries are the New Moon
+ * (day 1), then each moonrise; a day ends at the next moonrise or, for the last one
+ * of the lunation, at the next New Moon (the count restarts at 1). Same scheme as
+ * lunarDayAt, so spans always agree with the day numbers.
+ */
+function lunarDaySpans(
+  observer: Astronomy.Observer,
+  obsKey: string,
+  t0: Date,
+  t1: Date,
+  timeZone: string,
+): LunarDaySpan[] {
+  const startMs = t0.getTime();
+  const endMs = t1.getTime();
+  const out: LunarDaySpan[] = [];
+
+  let anchor = t0;
+  for (let lunation = 0; lunation < 2; lunation++) {
+    const nm = lastNewMoonBefore(anchor);
+    const nextNm = Astronomy.SearchMoonPhase(0, new Date(nm.date.getTime() + DAY_MS), 40);
+    if (!nextNm) break;
+    const nextMs = nextNm.date.getTime();
+
+    const starts = [nm.date.getTime()];
+    for (const ut of moonriseSequence(observer, obsKey, anchor)) {
+      const ms = Astronomy.MakeTime(ut).date.getTime();
+      if (ms < nextMs) starts.push(ms);
+    }
+
+    const spans: { day: number; from: number; to: number }[] = [];
+    starts.forEach((from, i) => {
+      const to = i + 1 < starts.length ? starts[i + 1] : nextMs;
+      const day = Math.min(30, i + 1);
+      const prev = spans[spans.length - 1];
+      if (prev && prev.day === day) prev.to = to; // clamp: stray rise near the next New Moon
+      else spans.push({ day, from, to });
+    });
+
+    for (const s of spans) {
+      if (s.to <= startMs || s.from >= endMs) continue;
+      const a = new Date(s.from);
+      const b = new Date(s.to);
+      out.push({
+        day: s.day,
+        start: { date: formatLocalIsoDate(a, timeZone), time: formatLocalTime(a, timeZone) },
+        end: { date: formatLocalIsoDate(b, timeZone), time: formatLocalTime(b, timeZone) },
+      });
+    }
+
+    // The next New Moon falls inside the local day -> its lunation (day 1…) belongs to it too.
+    if (nextMs < endMs) anchor = new Date(nextMs + 1000);
+    else break;
+  }
+  return out;
+}
+
 // --- zodiac transition time ------------------------------------------------
 
 function findSignCrossing(t0: Date, t1: Date): Date {
@@ -376,6 +435,7 @@ export function computeAstro(
   const lunarDayTransitionTime = lunarDayTransitionAt
     ? formatLocalTime(lunarDayTransitionAt, timeZone)
     : null;
+  const lunarDaySpansToday = lunarDaySpans(observer, obsKey, t0, t1, timeZone);
 
   // Zodiac sign + transition.
   const zodiacSign = signFromLon(moonLon(t0));
@@ -425,6 +485,7 @@ export function computeAstro(
   return {
     lunarDays,
     lunarDayTransitionTime,
+    lunarDaySpans: lunarDaySpansToday,
     moonPhase,
     illuminationPercent,
     zodiacSign,

@@ -40,6 +40,7 @@
     "moonrise": "Moonrise:",
     "moonset": "Moonset:",
     "moonriseSet": "Moonrise / Moonset:",
+    "lunarDay": "Lunar day {{day}}:",
     "illumination": "Illumination:",
     "voidOfCourse": "Void of Course:"
   },

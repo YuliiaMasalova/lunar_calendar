@@ -40,6 +40,7 @@
     "moonrise": "Восход Луны:",
     "moonset": "Заход Луны:",
     "moonriseSet": "Восход / Заход Луны:",
+    "lunarDay": "Лунный день {{day}}:",
     "illumination": "Освещённость:",
     "voidOfCourse": "Луна без курса:"
   },

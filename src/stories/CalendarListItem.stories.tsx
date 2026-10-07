@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CalendarListItem } from '../components/CalendarListItem';
-import { cellAstro, astroDouble, astroTriple } from './_fixtures';
+import { cellAstro, astro29, astroDouble, astroTriple } from './_fixtures';
 
 const noop = () => {};
 const DATE = new Date('2027-10-12T00:00:00');
@@ -36,6 +36,8 @@ export const Selected: Story = { args: { astro: cellAstro('favorable'), isSelect
 export const Today: Story = { args: { astro: cellAstro('favorable'), isToday: true } };
 
 /** Double lunar day (SPEC §7.1). */
+export const LunarDay29: Story = { args: { astro: astro29 } };
+
 export const DoubleLunarDay: Story = { args: { astro: astroDouble } };
 /** Triple lunar day — the longest label, must not wrap (SPEC §7.1). */
 export const TripleLunarDay: Story = { args: { astro: astroTriple } };
